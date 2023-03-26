@@ -1,0 +1,2592 @@
+ [
+                {
+                    "rowstamp": "[0 0 0 0 9 -124 -67 -62]",
+                    "ASSETNUM": "12996",
+                    "DESCRIPTION": "HVAC overheating",
+                    "ESTDUR": 0.0,
+                    "FAILURECODE": "MOTEUR",
+                    "FR1CODE": "CRACKED",
+                    "FR2CODE": "X2",
+                    "GLACCOUNT": "6000-100-200",
+                    "LEAD": "JONES",
+                    "LOCATION": "BR300",
+                    "ORGID": "EAGLENA",
+                    "PHONE": "+14148929343",
+                    "PROBLEMCODE": "VIBRATIO",
+                    "REMARKENTERDATE": "2023-02-21T11:26:06+01:00",
+                    "REPORTDATE": "2023-02-16T18:24:43+01:00",
+                    "REPORTEDBY": "PEDRICK",
+                    "SCHEDSTART": "2023-02-16T18:24:44+01:00",
+                    "SITEID": "SMTK",
+                    "STATUS": "APPR",
+                    "WOCLASS": "WORKORDER",
+                    "WONUM": "783542",
+                    "WOPRIORITY": 2,
+                    "WORKORDERID": 258011,
+                    "WORKTYPE": "CM",
+                    "WPLABOR": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -64 21]",
+                            "DISPLAYWONUM": "783542",
+                            "LABORCODE": "BONEY",
+                            "LABORHRS": 2.0,
+                            "QUANTITY": 1,
+                            "RATE": 22.0,
+                            "SITEID": "SMTK",
+                            "WONUM": "783542",
+                            "WPLABORID": "19266"
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -64 20]",
+                            "DISPLAYWONUM": "783542",
+                            "LABORCODE": "BENETTI",
+                            "LABORHRS": 2.0,
+                            "QUANTITY": 1,
+                            "RATE": 21.5,
+                            "SITEID": "SMTK",
+                            "WONUM": "783542",
+                            "WPLABORID": "19267"
+                        }
+                    ],
+                    "WPMATERIAL": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 107 -117 20]",
+                            "DESCRIPTION": "PLATE SPRING (R260-302-2 (HP2S)) (FOR 16TH STAG TB & GEN SIDE)",
+                            "DISPLAYWONUM": "783542",
+                            "ITEMNUM": "0-0514",
+                            "ITEMQTY": 2.0,
+                            "LOCATION": "CENTRAL",
+                            "REQUESTBY": "MAXADMIN",
+                            "REQUIREDATE": "2023-02-16T18:24:44+01:00",
+                            "SITEID": "SMTK",
+                            "WPITEMID": 11557
+                        }
+                    ],
+                    "WPTOOL": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -64 25]",
+                            "DESCRIPTION": "SIMPSON VOLT/OHMETER",
+                            "DISPLAYWONUM": "783542",
+                            "HOURS": 1.0,
+                            "ITEMNUM": "METER",
+                            "ITEMQTY": 1.0,
+                            "ITEMSETID": "SET1",
+                            "WPITEMID": 11559
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -64 28]",
+                            "DESCRIPTION": "HVAC Tool Kit - Ref. Guages/Evac Tank/Therm.",
+                            "DISPLAYWONUM": "783542",
+                            "HOURS": 1.0,
+                            "ITEMNUM": "HVAC",
+                            "ITEMQTY": 2.0,
+                            "ITEMSETID": "SET1",
+                            "WPITEMID": 11558
+                        }
+                    ],
+                    "LABTRANS": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 107 -116 -109]",
+                            "CRAFT": "AM",
+                            "ENTERDATE": "2023-02-21T12:29:46+01:00",
+                            "LABORCODE": "MOBILE_U",
+                            "LABTRANSID": 104651,
+                            "REFWO": "783542",
+                            "REGULARHRS": 0.016666666666666666,
+                            "SITEID": "SMTK",
+                            "STARTDATE": "2023-02-21T00:00:00+01:00",
+                            "STARTDATEENTERED": "2023-02-21T00:00:00+01:00",
+                            "TRANSDATE": "2023-02-21T12:29:46+01:00",
+                            "TRANSTYPE": "WORK",
+                            "WONUM": "783542"
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 107 -47 16]",
+                            "CRAFT": "AM",
+                            "ENTERDATE": "2023-02-21T14:00:33+01:00",
+                            "FINISHDATE": "2023-02-21T00:00:00+01:00",
+                            "FINISHDATETIME": "2023-02-21T17:15:24+01:00",
+                            "FINISHTIME": "2023-02-21T17:15:24+01:00",
+                            "LABORCODE": "MOBILE_U",
+                            "LABTRANSID": 104652,
+                            "REFWO": "783542",
+                            "REGULARHRS": 3.25,
+                            "SITEID": "SMTK",
+                            "STARTDATE": "2023-02-21T00:00:00+01:00",
+                            "STARTDATEENTERED": "2023-02-21T00:00:00+01:00",
+                            "STARTDATETIME": "2023-02-21T14:00:24+01:00",
+                            "STARTTIME": "2023-02-21T14:00:24+01:00",
+                            "STARTTIMEENTERED": "1970-01-01T14:00:24+01:00",
+                            "TRANSDATE": "2023-02-21T14:00:33+01:00",
+                            "TRANSTYPE": "WORK",
+                            "WONUM": "783542"
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 108 48 -97]",
+                            "CRAFT": "AM",
+                            "ENTERDATE": "2023-02-21T16:05:00+01:00",
+                            "LABORCODE": "MOBILE_U",
+                            "LABTRANSID": 104656,
+                            "REFWO": "783542",
+                            "REGULARHRS": 0.0,
+                            "SITEID": "SMTK",
+                            "STARTDATE": "2023-02-21T00:00:00+01:00",
+                            "STARTDATEENTERED": "2023-02-21T00:00:00+01:00",
+                            "TRANSDATE": "2023-02-21T16:05:00+01:00",
+                            "TRANSTYPE": "WORK",
+                            "WONUM": "783542"
+                        }
+                    ],
+                    "MATUSETRANS": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 -124 -67 -58]",
+                            "ACTUALDATE": "2023-02-27T07:18:17+01:00",
+                            "DESCRIPTION": "PLATE SPRING (R260-302-2 (HP2S)) (FOR 16TH STAG TB & GEN SIDE)",
+                            "ENTERBY": "MOBILE_USER",
+                            "ISSUETYPE": "ISSUE",
+                            "ITEMNUM": "0-0514",
+                            "MATUSETRANSID": 106187,
+                            "POSITIVEQUANTITY": 1.0,
+                            "QUANTITY": -1.0,
+                            "SITEID": "SMTK",
+                            "STORELOC": "CENTRAL",
+                            "WONUM": "783542"
+                        }
+                    ],
+                    "WORKLOG": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 116 58 -49]",
+                            "CLASS": "WORKORDER",
+                            "CLIENTVIEWABLE": false,
+                            "CREATEBY": "MOBILE_USER",
+                            "CREATEDATE": "2023-02-23T12:08:01+01:00",
+                            "DESCRIPTION": "Test",
+                            "LOGTYPE": "APPTNOTE",
+                            "MODIFYBY": "MOBILE_USER",
+                            "MODIFYDATE": "2023-02-23T12:08:01+01:00",
+                            "RECORDKEY": "783542",
+                            "SITEID": "SMTK",
+                            "WORKLOGID": 3832
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 116 71 36]",
+                            "CLASS": "WORKORDER",
+                            "CLIENTVIEWABLE": false,
+                            "CREATEBY": "MOBILE_USER",
+                            "CREATEDATE": "2023-02-23T12:24:10+01:00",
+                            "DESCRIPTION": "Helloo",
+                            "LOGTYPE": "APPTNOTE",
+                            "MODIFYBY": "MOBILE_USER",
+                            "MODIFYDATE": "2023-02-23T12:24:10+01:00",
+                            "RECORDKEY": "783542",
+                            "SITEID": "SMTK",
+                            "WORKLOGID": 3839
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 116 73 81]",
+                            "CLASS": "WORKORDER",
+                            "CLIENTVIEWABLE": false,
+                            "CREATEBY": "MOBILE_USER",
+                            "CREATEDATE": "2023-02-23T12:27:00+01:00",
+                            "DESCRIPTION": "Ds",
+                            "LOGTYPE": "APPTNOTE",
+                            "MODIFYBY": "MOBILE_USER",
+                            "MODIFYDATE": "2023-02-23T12:27:00+01:00",
+                            "RECORDKEY": "783542",
+                            "SITEID": "SMTK",
+                            "WORKLOGID": 3842
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 116 59 32]",
+                            "CLASS": "WORKORDER",
+                            "CLIENTVIEWABLE": false,
+                            "CREATEBY": "MOBILE_USER",
+                            "CREATEDATE": "2023-02-23T12:08:29+01:00",
+                            "DESCRIPTION": "Hello",
+                            "LOGTYPE": "APPTNOTE",
+                            "MODIFYBY": "MOBILE_USER",
+                            "MODIFYDATE": "2023-02-23T12:08:29+01:00",
+                            "RECORDKEY": "783542",
+                            "SITEID": "SMTK",
+                            "WORKLOGID": 3833
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 116 61 -56]",
+                            "CLASS": "WORKORDER",
+                            "CLIENTVIEWABLE": false,
+                            "CREATEBY": "MOBILE_USER",
+                            "CREATEDATE": "2023-02-23T12:11:58+01:00",
+                            "DESCRIPTION": "Hello",
+                            "LOGTYPE": "APPTNOTE",
+                            "MODIFYBY": "MOBILE_USER",
+                            "MODIFYDATE": "2023-02-23T12:11:58+01:00",
+                            "RECORDKEY": "783542",
+                            "SITEID": "SMTK",
+                            "WORKLOGID": 3834
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 116 67 25]",
+                            "CLASS": "WORKORDER",
+                            "CLIENTVIEWABLE": false,
+                            "CREATEBY": "MOBILE_USER",
+                            "CREATEDATE": "2023-02-23T12:18:52+01:00",
+                            "DESCRIPTION": "Test",
+                            "LOGTYPE": "APPTNOTE",
+                            "MODIFYBY": "MOBILE_USER",
+                            "MODIFYDATE": "2023-02-23T12:18:52+01:00",
+                            "RECORDKEY": "783542",
+                            "SITEID": "SMTK",
+                            "WORKLOGID": 3837
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 116 72 50]",
+                            "CLASS": "WORKORDER",
+                            "CLIENTVIEWABLE": false,
+                            "CREATEBY": "MOBILE_USER",
+                            "CREATEDATE": "2023-02-23T12:25:43+01:00",
+                            "DESCRIPTION": "F",
+                            "LOGTYPE": "APPTNOTE",
+                            "MODIFYBY": "MOBILE_USER",
+                            "MODIFYDATE": "2023-02-23T12:25:43+01:00",
+                            "RECORDKEY": "783542",
+                            "SITEID": "SMTK",
+                            "WORKLOGID": 3840
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 116 72 -13]",
+                            "CLASS": "WORKORDER",
+                            "CLIENTVIEWABLE": false,
+                            "CREATEBY": "MOBILE_USER",
+                            "CREATEDATE": "2023-02-23T12:26:42+01:00",
+                            "DESCRIPTION": "Fd",
+                            "LOGTYPE": "APPTNOTE",
+                            "MODIFYBY": "MOBILE_USER",
+                            "MODIFYDATE": "2023-02-23T12:26:42+01:00",
+                            "RECORDKEY": "783542",
+                            "SITEID": "SMTK",
+                            "WORKLOGID": 3841
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 116 93 77]",
+                            "CLASS": "WORKORDER",
+                            "CLIENTVIEWABLE": false,
+                            "CREATEBY": "MOBILE_USER",
+                            "CREATEDATE": "2023-02-23T12:53:32+01:00",
+                            "DESCRIPTION": "Sd",
+                            "LOGTYPE": "APPTNOTE",
+                            "MODIFYBY": "MOBILE_USER",
+                            "MODIFYDATE": "2023-02-23T12:53:32+01:00",
+                            "RECORDKEY": "783542",
+                            "SITEID": "SMTK",
+                            "WORKLOGID": 3848
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 120 72 21]",
+                            "CLASS": "WORKORDER",
+                            "CLIENTVIEWABLE": false,
+                            "CREATEBY": "MOBILE_USER",
+                            "CREATEDATE": "2023-02-24T09:57:08+01:00",
+                            "DESCRIPTION": "Test",
+                            "LOGTYPE": "APPTNOTE",
+                            "MODIFYBY": "MOBILE_USER",
+                            "MODIFYDATE": "2023-02-24T09:57:08+01:00",
+                            "RECORDKEY": "783542",
+                            "SITEID": "SMTK",
+                            "WORKLOGID": 3865
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 120 74 101]",
+                            "CLASS": "WORKORDER",
+                            "CLIENTVIEWABLE": false,
+                            "CREATEBY": "MOBILE_USER",
+                            "CREATEDATE": "2023-02-24T10:00:00+01:00",
+                            "DESCRIPTION": "Wo",
+                            "LOGTYPE": "APPTNOTE",
+                            "MODIFYBY": "MOBILE_USER",
+                            "MODIFYDATE": "2023-02-24T10:00:00+01:00",
+                            "RECORDKEY": "783542",
+                            "SITEID": "SMTK",
+                            "WORKLOGID": 3866
+                        }
+                    ],
+                    "ASSET": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 90 -32 59]",
+                            "ASSETNUM": "12996",
+                            "ASSETUID": 11355,
+                            "DESCRIPTION": "Lubrication System",
+                            "LOCATION": "BPM3100",
+                            "SITEID": "SMTK",
+                            "ASSETMETER": [
+                                {
+                                    "rowstamp": "[0 0 0 0 9 90 -32 61]",
+                                    "ASSETMETERID": 2508,
+                                    "ASSETNUM": "12996",
+                                    "LINEARASSETMETERID": 0,
+                                    "METERNAME": "ENERGY KHW",
+                                    "READINGTYPE": "DELTA",
+                                    "SITEID": "SMTK",
+                                    "METER": [
+                                        {
+                                            "rowstamp": "[0 0 0 0 6 86 -91 53]",
+                                            "METERID": 722,
+                                            "METERNAME": "ENERGY KHW",
+                                            "METERTYPE": "CONTINUOUS"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "rowstamp": "[0 0 0 0 9 71 -36 92]",
+                                    "ASSETMETERID": 2443,
+                                    "ASSETNUM": "12996",
+                                    "LINEARASSETMETERID": 0,
+                                    "MEASUREUNITID": "PSI",
+                                    "METERNAME": "PRESSURE",
+                                    "READINGTYPE": "DELTA",
+                                    "SITEID": "SMTK",
+                                    "METER": [
+                                        {
+                                            "rowstamp": "[0 0 0 0 0 3 -84 -118]",
+                                            "METERID": 10,
+                                            "METERNAME": "PRESSURE",
+                                            "METERTYPE": "GAUGE"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "LOCATIONS": [
+                        {
+                            "rowstamp": "[0 0 0 0 5 -60 59 10]",
+                            "DESCRIPTION": "Boiler Room Reciprocating Compressor",
+                            "LOCATION": "BR300"
+                        }
+                    ],
+                    "WOACTIVITY": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 107 -117 39]",
+                            "DESCRIPTION": "Review hot and cold air flow",
+                            "SITEID": "SMTK",
+                            "STATUS": "APPR",
+                            "TASKID": 10,
+                            "WONUM": "T84528",
+                            "WORKORDERID": 258012
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 107 -117 48]",
+                            "DESCRIPTION": "Provide access to HVAC system",
+                            "SITEID": "SMTK",
+                            "STATUS": "APPR",
+                            "TASKID": 20,
+                            "WONUM": "T84529",
+                            "WORKORDERID": 258013
+                        }
+                    ],
+                    "ASSIGNMENT": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -64 36]",
+                            "APPOINTMENT": false,
+                            "APPTREQUIRED": false,
+                            "ASSIGNMENTID": 43766,
+                            "CRAFT": "PIPE",
+                            "FINISHDATE": "2023-02-16T20:24:44+01:00",
+                            "LABORCODE": "BENETTI",
+                            "LABORHRS": 2.0,
+                            "ORGID": "EAGLENA",
+                            "PARENTASSIGNID": 0,
+                            "SCHEDULEDATE": "2023-02-16T18:24:44+01:00",
+                            "STATUS": "ASSIGNED",
+                            "WORKLOG": false,
+                            "WPLABORID": "19267"
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -64 37]",
+                            "APPOINTMENT": false,
+                            "APPTREQUIRED": false,
+                            "ASSIGNMENTID": 43765,
+                            "CRAFT": "ELECT",
+                            "FINISHDATE": "2023-02-16T20:24:44+01:00",
+                            "LABORCODE": "BONEY",
+                            "LABORHRS": 2.0,
+                            "ORGID": "EAGLENA",
+                            "PARENTASSIGNID": 0,
+                            "SCHEDULEDATE": "2023-02-16T18:24:44+01:00",
+                            "STATUS": "ASSIGNED",
+                            "WORKLOG": false,
+                            "WPLABORID": "19266"
+                        }
+                    ],
+                    "WOSERVICEADDRESS": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -64 30]",
+                            "ADDRESSISCHANGED": false,
+                            "LATITUDEY": 36.818587313,
+                            "LONGITUDEX": 10.18450042,
+                            "ORGID": "EAGLENA",
+                            "WOSERVICEADDRESSID": 265245
+                        }
+                    ]
+                },
+                {
+                    "rowstamp": "[0 0 0 0 9 107 -47 75]",
+                    "ASSETNUM": "A00000000004",
+                    "DESCRIPTION": "Problem in feedwater Pump Service",
+                    "ESTDUR": 0.0,
+                    "FAILURECODE": "PUMPS",
+                    "FR1CODE": "FITTING",
+                    "FR2CODE": "TIGHTFIT",
+                    "GLACCOUNT": "6000-100-200",
+                    "LEAD": "BALL",
+                    "LOCATION": "SHIPPING",
+                    "ORGID": "EAGLENA",
+                    "PHONE": "+19159478739",
+                    "PROBLEMCODE": "LEAK",
+                    "REPORTDATE": "2023-02-16T18:24:49+01:00",
+                    "REPORTEDBY": "ALLEN",
+                    "SCHEDSTART": "2023-02-16T18:24:49+01:00",
+                    "SITEID": "SMTK",
+                    "STATUS": "APPR",
+                    "WOCLASS": "WORKORDER",
+                    "WONUM": "783543",
+                    "WOPRIORITY": 3,
+                    "WORKORDERID": 258014,
+                    "WORKTYPE": "CM",
+                    "WPLABOR": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -64 93]",
+                            "DISPLAYWONUM": "783543",
+                            "LABORCODE": "BENETTI",
+                            "LABORHRS": 2.0,
+                            "QUANTITY": 1,
+                            "RATE": 21.5,
+                            "SITEID": "SMTK",
+                            "WONUM": "783543",
+                            "WPLABORID": "19268"
+                        }
+                    ],
+                    "WPMATERIAL": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 107 -117 -74]",
+                            "DESCRIPTION": "TUBES FOR CLOSED CIRCUIT WATER COOLER",
+                            "DISPLAYWONUM": "783543",
+                            "ITEMNUM": "4701019",
+                            "ITEMQTY": 2.0,
+                            "LOCATION": "CENTRAL",
+                            "REQUESTBY": "MAXADMIN",
+                            "REQUIREDATE": "2023-02-16T18:24:49+01:00",
+                            "SITEID": "SMTK",
+                            "WPITEMID": 11561
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 107 -117 -73]",
+                            "DESCRIPTION": "Bras-support acier",
+                            "DISPLAYWONUM": "783543",
+                            "ITEMNUM": "227132",
+                            "ITEMQTY": 3.0,
+                            "LOCATION": "CENTRAL",
+                            "REQUESTBY": "MAXADMIN",
+                            "REQUIREDATE": "2023-02-16T18:24:49+01:00",
+                            "SITEID": "SMTK",
+                            "WPITEMID": 11560
+                        }
+                    ],
+                    "WPTOOL": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -64 98]",
+                            "DESCRIPTION": "RIDGID 2in. PIPE THREADING MACHINE",
+                            "DISPLAYWONUM": "783543",
+                            "HOURS": 1.0,
+                            "ITEMNUM": "PIPECUT",
+                            "ITEMQTY": 1.0,
+                            "ITEMSETID": "SET1",
+                            "WPITEMID": 11562
+                        }
+                    ],
+                    "LABTRANS": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 108 48 29]",
+                            "CRAFT": "AM",
+                            "ENTERDATE": "2023-02-21T16:04:25+01:00",
+                            "LABORCODE": "MOBILE_U",
+                            "LABTRANSID": 104653,
+                            "REFWO": "783543",
+                            "REGULARHRS": 3.5666666666666664,
+                            "SITEID": "SMTK",
+                            "STARTDATE": "2023-02-21T00:00:00+01:00",
+                            "STARTDATEENTERED": "2023-02-21T00:00:00+01:00",
+                            "TRANSDATE": "2023-02-21T16:04:25+01:00",
+                            "TRANSTYPE": "WORK",
+                            "WONUM": "783543"
+                        }
+                    ],
+                    "MATUSETRANS": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 107 -47 62]",
+                            "ACTUALDATE": "2023-02-21T14:00:54+01:00",
+                            "DESCRIPTION": "Bras-support acier",
+                            "ENTERBY": "MOBILE_USER",
+                            "ISSUETYPE": "ISSUE",
+                            "ITEMNUM": "227132",
+                            "MATUSETRANSID": 106154,
+                            "POSITIVEQUANTITY": 3.0,
+                            "QUANTITY": -3.0,
+                            "SITEID": "SMTK",
+                            "STORELOC": "CENTRAL",
+                            "WONUM": "783543"
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 107 -47 73]",
+                            "ACTUALDATE": "2023-02-21T14:00:55+01:00",
+                            "DESCRIPTION": "TUBES FOR CLOSED CIRCUIT WATER COOLER",
+                            "ENTERBY": "MOBILE_USER",
+                            "ISSUETYPE": "ISSUE",
+                            "ITEMNUM": "4701019",
+                            "MATUSETRANSID": 106155,
+                            "POSITIVEQUANTITY": 2.0,
+                            "QUANTITY": -2.0,
+                            "SITEID": "SMTK",
+                            "STORELOC": "CENTRAL",
+                            "WONUM": "783543"
+                        }
+                    ],
+                    "WORKLOG": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 116 68 -55]",
+                            "CLASS": "WORKORDER",
+                            "CLIENTVIEWABLE": false,
+                            "CREATEBY": "MOBILE_USER",
+                            "CREATEDATE": "2023-02-23T12:21:10+01:00",
+                            "DESCRIPTION": "Hello5",
+                            "LOGTYPE": "APPTNOTE",
+                            "MODIFYBY": "MOBILE_USER",
+                            "MODIFYDATE": "2023-02-23T12:21:10+01:00",
+                            "RECORDKEY": "783543",
+                            "SITEID": "SMTK",
+                            "WORKLOGID": 3838
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 116 74 115]",
+                            "CLASS": "WORKORDER",
+                            "CLIENTVIEWABLE": false,
+                            "CREATEBY": "MOBILE_USER",
+                            "CREATEDATE": "2023-02-23T12:28:33+01:00",
+                            "DESCRIPTION": "Test",
+                            "LOGTYPE": "APPTNOTE",
+                            "MODIFYBY": "MOBILE_USER",
+                            "MODIFYDATE": "2023-02-23T12:28:33+01:00",
+                            "RECORDKEY": "783543",
+                            "SITEID": "SMTK",
+                            "WORKLOGID": 3843
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 116 63 -63]",
+                            "CLASS": "WORKORDER",
+                            "CLIENTVIEWABLE": false,
+                            "CREATEBY": "MOBILE_USER",
+                            "CREATEDATE": "2023-02-23T12:14:39+01:00",
+                            "DESCRIPTION": "Hello1",
+                            "LOGTYPE": "APPTNOTE",
+                            "MODIFYBY": "MOBILE_USER",
+                            "MODIFYDATE": "2023-02-23T12:14:39+01:00",
+                            "RECORDKEY": "783543",
+                            "SITEID": "SMTK",
+                            "WORKLOGID": 3835
+                        }
+                    ],
+                    "ASSET": [
+                        {
+                            "rowstamp": "[0 0 0 0 8 70 89 83]",
+                            "ASSETNUM": "A00000000004",
+                            "ASSETUID": 8622,
+                            "DESCRIPTION": "Accélérateur ACCL-PC1-B12 (SI-SITS-TUNS-VEN)",
+                            "LOCATION": "ACCL-PC1-B12",
+                            "SITEID": "SMTK",
+                            "ASSETMETER": [
+                                {
+                                    "rowstamp": "[0 0 0 0 9 17 19 -74]",
+                                    "ASSETMETERID": 1750,
+                                    "ASSETNUM": "A00000000004",
+                                    "LASTREADING": "678",
+                                    "LASTREADINGDATE": "2023-02-02T18:58:05+01:00",
+                                    "LINEARASSETMETERID": 0,
+                                    "MEASUREUNITID": "GE",
+                                    "METERNAME": "ACC-207-P1",
+                                    "SITEID": "SMTK",
+                                    "METER": [
+                                        {
+                                            "rowstamp": "[0 0 0 0 8 56 -123 -77]",
+                                            "METERID": 362,
+                                            "METERNAME": "ACC-207-P1",
+                                            "METERTYPE": "GAUGE"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "rowstamp": "[0 0 0 0 9 17 19 -65]",
+                                    "ASSETMETERID": 2128,
+                                    "ASSETNUM": "A00000000004",
+                                    "LASTREADING": "987",
+                                    "LASTREADINGDATE": "2023-02-02T18:58:06+01:00",
+                                    "LINEARASSETMETERID": 0,
+                                    "MEASUREUNITID": "GE",
+                                    "METERNAME": "ACC-207P2",
+                                    "SITEID": "SMTK",
+                                    "METER": [
+                                        {
+                                            "rowstamp": "[0 0 0 0 1 101 -56 -106]",
+                                            "METERID": 367,
+                                            "METERNAME": "ACC-207P2",
+                                            "METERTYPE": "GAUGE"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "LOCATIONS": [
+                        {
+                            "rowstamp": "[0 0 0 0 5 -60 59 -99]",
+                            "DESCRIPTION": "Shipping Location",
+                            "LOCATION": "SHIPPING"
+                        }
+                    ],
+                    "WOACTIVITY": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 107 -117 -64]",
+                            "DESCRIPTION": "Check pump operation.",
+                            "SITEID": "SMTK",
+                            "STATUS": "APPR",
+                            "TASKID": 10,
+                            "WONUM": "T84530",
+                            "WORKORDERID": 258015
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 107 -117 -61]",
+                            "DESCRIPTION": "Check pump float switch.",
+                            "SITEID": "SMTK",
+                            "STATUS": "APPR",
+                            "TASKID": 20,
+                            "WONUM": "T84531",
+                            "WORKORDERID": 258016
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 107 -117 -58]",
+                            "DESCRIPTION": "Check for leaks.",
+                            "SITEID": "SMTK",
+                            "STATUS": "APPR",
+                            "TASKID": 30,
+                            "WONUM": "T84532",
+                            "WORKORDERID": 258017
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 107 -117 -55]",
+                            "DESCRIPTION": "Inspect main disconnect and all electrical.",
+                            "SITEID": "SMTK",
+                            "STATUS": "APPR",
+                            "TASKID": 40,
+                            "WONUM": "T84533",
+                            "WORKORDERID": 258018
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 107 -117 -52]",
+                            "DESCRIPTION": "Clean contactors and contactor compartment.",
+                            "SITEID": "SMTK",
+                            "STATUS": "APPR",
+                            "TASKID": 50,
+                            "WONUM": "T84534",
+                            "WORKORDERID": 258019
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 107 -117 -49]",
+                            "DESCRIPTION": "Inspect floats and replace main gasket on housing.",
+                            "SITEID": "SMTK",
+                            "STATUS": "APPR",
+                            "TASKID": 60,
+                            "WONUM": "T84535",
+                            "WORKORDERID": 258020
+                        }
+                    ],
+                    "ASSIGNMENT": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -64 104]",
+                            "APPOINTMENT": false,
+                            "APPTREQUIRED": false,
+                            "ASSIGNMENTID": 43767,
+                            "CRAFT": "PIPE",
+                            "FINISHDATE": "2023-02-16T20:24:49+01:00",
+                            "LABORCODE": "BENETTI",
+                            "LABORHRS": 2.0,
+                            "ORGID": "EAGLENA",
+                            "PARENTASSIGNID": 0,
+                            "SCHEDULEDATE": "2023-02-16T18:24:49+01:00",
+                            "STATUS": "ASSIGNED",
+                            "WORKLOG": false,
+                            "WPLABORID": "19268"
+                        }
+                    ],
+                    "WOSERVICEADDRESS": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 103 104 -98]",
+                            "ADDRESSISCHANGED": false,
+                            "LATITUDEY": 36.8185735504,
+                            "LONGITUDEX": 10.1865775511,
+                            "ORGID": "EAGLENA",
+                            "WOSERVICEADDRESSID": 265250
+                        }
+                    ]
+                },
+                {
+                    "rowstamp": "[0 0 0 0 9 86 -64 -71]",
+                    "ASSETNUM": "12996",
+                    "DESCRIPTION": "pipeline Jammed in unit 1",
+                    "ESTDUR": 0.0,
+                    "FAILURECODE": "PUMPS",
+                    "GLACCOUNT": "6000-100-200",
+                    "LEAD": "PEDRICK",
+                    "LOCATION": "BR400",
+                    "ORGID": "EAGLENA",
+                    "PHONE": "+19159478739",
+                    "PROBLEMCODE": "STOPPED",
+                    "REPORTDATE": "2023-02-16T18:24:54+01:00",
+                    "REPORTEDBY": "JOHNJV",
+                    "SITEID": "SMTK",
+                    "STATUS": "WPLAN",
+                    "WOCLASS": "WORKORDER",
+                    "WONUM": "783544",
+                    "WOPRIORITY": 4,
+                    "WORKORDERID": 258021,
+                    "WORKTYPE": "CM",
+                    "WPLABOR": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -64 -69]",
+                            "CRAFT": "CATERING",
+                            "DISPLAYWONUM": "783544",
+                            "LABORHRS": 1.0,
+                            "QUANTITY": 1,
+                            "RATE": 0.0,
+                            "SITEID": "SMTK",
+                            "WONUM": "783544",
+                            "WPLABORID": "19269"
+                        }
+                    ],
+                    "WPMATERIAL": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -64 -68]",
+                            "DESCRIPTION": "Filtre, Air secondaire",
+                            "DISPLAYWONUM": "783544",
+                            "ITEMNUM": "6I-2500",
+                            "ITEMQTY": 1.0,
+                            "LOCATION": "CENTRAL",
+                            "REQUESTBY": "MAXADMIN",
+                            "REQUIREDATE": "2023-02-16T18:24:55+01:00",
+                            "SITEID": "SMTK",
+                            "WPITEMID": 11564
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -64 -66]",
+                            "DESCRIPTION": "Garnitures d'étanchéité pour tuyaux",
+                            "DISPLAYWONUM": "783544",
+                            "ITEMNUM": "386-12",
+                            "ITEMQTY": 2.0,
+                            "LOCATION": "CENTRAL",
+                            "REQUESTBY": "MAXADMIN",
+                            "REQUIREDATE": "2023-02-16T18:24:55+01:00",
+                            "SITEID": "SMTK",
+                            "WPITEMID": 11563
+                        }
+                    ],
+                    "WORKLOG": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 116 65 52]",
+                            "CLASS": "WORKORDER",
+                            "CLIENTVIEWABLE": false,
+                            "CREATEBY": "MOBILE_USER",
+                            "CREATEDATE": "2023-02-23T12:16:36+01:00",
+                            "DESCRIPTION": "Hello",
+                            "LOGTYPE": "APPTNOTE",
+                            "MODIFYBY": "MOBILE_USER",
+                            "MODIFYDATE": "2023-02-23T12:16:36+01:00",
+                            "RECORDKEY": "783544",
+                            "SITEID": "SMTK",
+                            "WORKLOGID": 3836
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 116 75 61]",
+                            "CLASS": "WORKORDER",
+                            "CLIENTVIEWABLE": false,
+                            "CREATEBY": "MOBILE_USER",
+                            "CREATEDATE": "2023-02-23T12:29:29+01:00",
+                            "DESCRIPTION": "Test",
+                            "LOGTYPE": "APPTNOTE",
+                            "MODIFYBY": "MOBILE_USER",
+                            "MODIFYDATE": "2023-02-23T12:29:29+01:00",
+                            "RECORDKEY": "783544",
+                            "SITEID": "SMTK",
+                            "WORKLOGID": 3844
+                        }
+                    ],
+                    "MULTIASSETLOCCI": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 103 105 107]",
+                            "ASSETNUM": "A00000000004",
+                            "LOCATION": "ACCL-PC1-B12",
+                            "MULTIID": 117279,
+                            "PROGRESS": false,
+                            "RECORDKEY": "783544",
+                            "SITEID": "SMTK",
+                            "ASSET": [
+                                {
+                                    "rowstamp": "[0 0 0 0 8 70 89 83]",
+                                    "ASSETNUM": "A00000000004",
+                                    "ASSETUID": 8622,
+                                    "DESCRIPTION": "Accélérateur ACCL-PC1-B12 (SI-SITS-TUNS-VEN)",
+                                    "LOCATION": "ACCL-PC1-B12",
+                                    "SITEID": "SMTK"
+                                }
+                            ],
+                            "LOCATIONS": [
+                                {
+                                    "rowstamp": "[0 0 0 0 8 69 -99 20]",
+                                    "DESCRIPTION": "Accélérateur ACCL-PC1-B12 (SI-SITS-TUNS-VEN)",
+                                    "LOCATION": "ACCL-PC1-B12"
+                                }
+                            ]
+                        }
+                    ],
+                    "ASSET": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 90 -32 59]",
+                            "ASSETNUM": "12996",
+                            "ASSETUID": 11355,
+                            "DESCRIPTION": "Lubrication System",
+                            "LOCATION": "BPM3100",
+                            "SITEID": "SMTK",
+                            "ASSETMETER": [
+                                {
+                                    "rowstamp": "[0 0 0 0 9 90 -32 61]",
+                                    "ASSETMETERID": 2508,
+                                    "ASSETNUM": "12996",
+                                    "LINEARASSETMETERID": 0,
+                                    "METERNAME": "ENERGY KHW",
+                                    "READINGTYPE": "DELTA",
+                                    "SITEID": "SMTK",
+                                    "METER": [
+                                        {
+                                            "rowstamp": "[0 0 0 0 6 86 -91 53]",
+                                            "METERID": 722,
+                                            "METERNAME": "ENERGY KHW",
+                                            "METERTYPE": "CONTINUOUS"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "rowstamp": "[0 0 0 0 9 71 -36 92]",
+                                    "ASSETMETERID": 2443,
+                                    "ASSETNUM": "12996",
+                                    "LINEARASSETMETERID": 0,
+                                    "MEASUREUNITID": "PSI",
+                                    "METERNAME": "PRESSURE",
+                                    "READINGTYPE": "DELTA",
+                                    "SITEID": "SMTK",
+                                    "METER": [
+                                        {
+                                            "rowstamp": "[0 0 0 0 0 3 -84 -118]",
+                                            "METERID": 10,
+                                            "METERNAME": "PRESSURE",
+                                            "METERTYPE": "GAUGE"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "LOCATIONS": [
+                        {
+                            "rowstamp": "[0 0 0 0 5 -60 59 18]",
+                            "DESCRIPTION": "Main Boiler- 50,000 Lb/Hr",
+                            "LOCATION": "BR400"
+                        }
+                    ],
+                    "WOACTIVITY": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -64 -53]",
+                            "DESCRIPTION": "Pipe removal and cleaning",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 10,
+                            "WONUM": "T84536",
+                            "WORKORDERID": 258022
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -64 -57]",
+                            "DESCRIPTION": "Pipe replacement",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 20,
+                            "WONUM": "T84537",
+                            "WORKORDERID": 258023
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -64 -59]",
+                            "DESCRIPTION": "Test Air pressure",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 30,
+                            "WONUM": "T84538",
+                            "WORKORDERID": 258024
+                        }
+                    ],
+                    "ASSIGNMENT": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -64 -60]",
+                            "APPOINTMENT": false,
+                            "APPTREQUIRED": false,
+                            "ASSIGNMENTID": 43768,
+                            "CRAFT": "CATERING",
+                            "LABORHRS": 1.0,
+                            "ORGID": "EAGLENA",
+                            "PARENTASSIGNID": 0,
+                            "STATUS": "WAITASGN",
+                            "WORKLOG": false,
+                            "WPLABORID": "19269"
+                        }
+                    ],
+                    "WOSERVICEADDRESS": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -64 -64]",
+                            "ADDRESSISCHANGED": false,
+                            "LATITUDEY": 36.818587313,
+                            "LONGITUDEX": 10.18450042,
+                            "ORGID": "EAGLENA",
+                            "WOSERVICEADDRESSID": 265263
+                        }
+                    ]
+                },
+                {
+                    "rowstamp": "[0 0 0 0 9 86 -64 -7]",
+                    "ASSETNUM": "13027",
+                    "DESCRIPTION": "Forklift Leaking Hydraulic Oil",
+                    "ESTDUR": 0.0,
+                    "FAILURECODE": "MECH",
+                    "GLACCOUNT": "6000-100-200",
+                    "LEAD": "ADAMS",
+                    "LOCATION": "SHIPPING",
+                    "ORGID": "EAGLENA",
+                    "PHONE": "+19159478739",
+                    "PROBLEMCODE": "LEAKING",
+                    "REPORTDATE": "2023-02-16T18:24:57+01:00",
+                    "REPORTEDBY": "JONES",
+                    "SITEID": "SMTK",
+                    "STATUS": "WPLAN",
+                    "WOCLASS": "WORKORDER",
+                    "WONUM": "783545",
+                    "WOPRIORITY": 1,
+                    "WORKORDERID": 258025,
+                    "WORKTYPE": "CM",
+                    "ASSET": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 71 -12 100]",
+                            "ASSETNUM": "13027",
+                            "ASSETUID": 11387,
+                            "DESCRIPTION": "U-2 GENERATOR SHAFT SEAL UP EQUIPT H2 SEAL OIL FILTER DRAIN ",
+                            "LOCATION": "SHIPPING",
+                            "SITEID": "SMTK",
+                            "ASSETMETER": [
+                                {
+                                    "rowstamp": "[0 0 0 0 9 71 -12 94]",
+                                    "ASSETMETERID": 2480,
+                                    "ASSETNUM": "13027",
+                                    "LINEARASSETMETERID": 0,
+                                    "MEASUREUNITID": "DEG F",
+                                    "METERNAME": "TEMP-F",
+                                    "READINGTYPE": "DELTA",
+                                    "SITEID": "SMTK",
+                                    "METER": [
+                                        {
+                                            "rowstamp": "[0 0 0 0 0 3 -84 -122]",
+                                            "METERID": 6,
+                                            "METERNAME": "TEMP-F",
+                                            "METERTYPE": "GAUGE"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "LOCATIONS": [
+                        {
+                            "rowstamp": "[0 0 0 0 5 -60 59 -99]",
+                            "DESCRIPTION": "Shipping Location",
+                            "LOCATION": "SHIPPING"
+                        }
+                    ],
+                    "WOACTIVITY": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -63 15]",
+                            "DESCRIPTION": "Check the hydraulic fluid, motor oil and transmission fluid",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 10,
+                            "WONUM": "T84539",
+                            "WORKORDERID": 258026
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -63 7]",
+                            "DESCRIPTION": "Replacing valves",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 20,
+                            "WONUM": "T84540",
+                            "WORKORDERID": 258027
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -63 5]",
+                            "DESCRIPTION": "Measure the pressure and adjust if necessary",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 30,
+                            "WONUM": "T84541",
+                            "WORKORDERID": 258028
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -63 2]",
+                            "DESCRIPTION": "Check the oil level when the engine is off",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 40,
+                            "WONUM": "T84542",
+                            "WORKORDERID": 258029
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -64 -1]",
+                            "DESCRIPTION": "Remove the filler cap slowly so that the excess pressure is released",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 50,
+                            "WONUM": "T84543",
+                            "WORKORDERID": 258030
+                        }
+                    ],
+                    "WOSERVICEADDRESS": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -64 -5]",
+                            "ADDRESSISCHANGED": false,
+                            "ORGID": "EAGLENA",
+                            "WOSERVICEADDRESSID": 265270
+                        }
+                    ]
+                },
+                {
+                    "rowstamp": "[0 0 0 0 9 86 -63 -88]",
+                    "ASSETNUM": "13008",
+                    "DESCRIPTION": "Repair damaged Alternator",
+                    "ESTDUR": 0.0,
+                    "FAILURECODE": "MOTEUR",
+                    "GLACCOUNT": "6000-100-200",
+                    "LEAD": "ALLEN",
+                    "LOCATION": "REPAIR",
+                    "ORGID": "EAGLENA",
+                    "PHONE": "+19159478739",
+                    "PROBLEMCODE": "VIBRATIO",
+                    "REPORTDATE": "2023-02-16T18:25:02+01:00",
+                    "REPORTEDBY": "BALL",
+                    "SITEID": "SMTK",
+                    "STATUS": "WPLAN",
+                    "WOCLASS": "WORKORDER",
+                    "WONUM": "783546",
+                    "WOPRIORITY": 2,
+                    "WORKORDERID": 258031,
+                    "WORKTYPE": "CM",
+                    "WPLABOR": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -63 88]",
+                            "CRAFT": "ELECT",
+                            "DISPLAYWONUM": "783546",
+                            "LABORHRS": 1.0,
+                            "QUANTITY": 1,
+                            "RATE": 0.0,
+                            "SITEID": "SMTK",
+                            "SKILLLEVEL": "FIRSTCLASS",
+                            "WONUM": "783546",
+                            "WPLABORID": "19270"
+                        }
+                    ],
+                    "WPMATERIAL": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -63 107]",
+                            "DESCRIPTION": "Soupape, pointeau - 0,63 cm",
+                            "DISPLAYWONUM": "783546",
+                            "ITEMNUM": "0-7205",
+                            "ITEMQTY": 1.0,
+                            "LOCATION": "CENTRAL",
+                            "REQUESTBY": "MAXADMIN",
+                            "REQUIREDATE": "2023-02-16T18:25:04+01:00",
+                            "SITEID": "SMTK",
+                            "WPITEMID": 11565
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -63 120]",
+                            "DESCRIPTION": "PLATE SPRING (R260-302-2 (HP2S)) (FOR 16TH STAG TB & GEN SIDE)",
+                            "DISPLAYWONUM": "783546",
+                            "ITEMNUM": "0-0514",
+                            "ITEMQTY": 2.0,
+                            "LOCATION": "CENTRAL",
+                            "REQUESTBY": "MAXADMIN",
+                            "REQUIREDATE": "2023-02-16T18:25:05+01:00",
+                            "SITEID": "SMTK",
+                            "WPITEMID": 11566
+                        }
+                    ],
+                    "WPTOOL": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -63 -122]",
+                            "DESCRIPTION": "SIMPSON VOLT/OHMETER",
+                            "DISPLAYWONUM": "783546",
+                            "HOURS": 0.0,
+                            "ITEMNUM": "METER",
+                            "ITEMQTY": 1.0,
+                            "ITEMSETID": "SET1",
+                            "WPITEMID": 11567
+                        }
+                    ],
+                    "WORKLOG": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 116 77 118]",
+                            "CLASS": "WORKORDER",
+                            "CLIENTVIEWABLE": false,
+                            "CREATEBY": "MOBILE_USER",
+                            "CREATEDATE": "2023-02-23T12:32:20+01:00",
+                            "DESCRIPTION": "Test",
+                            "LOGTYPE": "APPTNOTE",
+                            "MODIFYBY": "MOBILE_USER",
+                            "MODIFYDATE": "2023-02-23T12:32:20+01:00",
+                            "RECORDKEY": "783546",
+                            "SITEID": "SMTK",
+                            "WORKLOGID": 3845
+                        }
+                    ],
+                    "ASSET": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 90 -32 -116]",
+                            "ASSETNUM": "13008",
+                            "ASSETUID": 11367,
+                            "DESCRIPTION": "Caustic Transfer Pump (B)",
+                            "LOCATION": "REPAIR",
+                            "SITEID": "SMTK",
+                            "ASSETMETER": [
+                                {
+                                    "rowstamp": "[0 0 0 0 9 90 -32 -114]",
+                                    "ASSETMETERID": 2511,
+                                    "ASSETNUM": "13008",
+                                    "LINEARASSETMETERID": 0,
+                                    "MEASUREUNITID": "PSI",
+                                    "METERNAME": "PRESSURE",
+                                    "READINGTYPE": "ACTUAL",
+                                    "SITEID": "SMTK",
+                                    "METER": [
+                                        {
+                                            "rowstamp": "[0 0 0 0 0 3 -84 -118]",
+                                            "METERID": 10,
+                                            "METERNAME": "PRESSURE",
+                                            "METERTYPE": "GAUGE"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "rowstamp": "[0 0 0 0 9 71 -36 -74]",
+                                    "ASSETMETERID": 2455,
+                                    "ASSETNUM": "13008",
+                                    "LINEARASSETMETERID": 0,
+                                    "MEASUREUNITID": "HOURS",
+                                    "METERNAME": "RUNHOURS",
+                                    "READINGTYPE": "ACTUAL",
+                                    "SITEID": "SMTK",
+                                    "METER": [
+                                        {
+                                            "rowstamp": "[0 0 0 0 8 -111 -14 -47]",
+                                            "METERID": 2,
+                                            "METERNAME": "RUNHOURS",
+                                            "METERTYPE": "CONTINUOUS"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "LOCATIONS": [
+                        {
+                            "rowstamp": "[0 0 0 0 6 94 -55 55]",
+                            "DESCRIPTION": "Repair Shop",
+                            "LOCATION": "REPAIR"
+                        }
+                    ],
+                    "WOACTIVITY": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -63 -107]",
+                            "DESCRIPTION": "Review the wire current",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 10,
+                            "WONUM": "T84544",
+                            "WORKORDERID": 258032
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -63 -83]",
+                            "DESCRIPTION": "Measure the  elecrtic generation",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 20,
+                            "WONUM": "T84545",
+                            "WORKORDERID": 258033
+                        }
+                    ],
+                    "ASSIGNMENT": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -63 93]",
+                            "APPOINTMENT": false,
+                            "APPTREQUIRED": false,
+                            "ASSIGNMENTID": 43769,
+                            "CRAFT": "ELECT",
+                            "LABORHRS": 1.0,
+                            "ORGID": "EAGLENA",
+                            "PARENTASSIGNID": 0,
+                            "STATUS": "WAITASGN",
+                            "WORKLOG": false,
+                            "WPLABORID": "19270"
+                        }
+                    ],
+                    "WOSERVICEADDRESS": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -63 89]",
+                            "ADDRESSISCHANGED": false,
+                            "ORGID": "EAGLENA",
+                            "WOSERVICEADDRESSID": 265282
+                        }
+                    ]
+                },
+                {
+                    "rowstamp": "[0 0 0 0 9 86 -63 -57]",
+                    "ASSETNUM": "3252",
+                    "DESCRIPTION": "Record amperage and voltage with motor operating.",
+                    "ESTDUR": 0.0,
+                    "FAILURECODE": "MOTEUR",
+                    "GLACCOUNT": "6000-100-200",
+                    "LEAD": "ALLEN",
+                    "LOCATION": "REPAIR",
+                    "ORGID": "EAGLENA",
+                    "PHONE": "+19159478739",
+                    "PROBLEMCODE": "VIBRATIO",
+                    "REPORTDATE": "2023-02-16T18:25:08+01:00",
+                    "REPORTEDBY": "BALL",
+                    "SCHEDSTART": "2023-02-16T18:25:08+01:00",
+                    "SITEID": "SMTK",
+                    "STATUS": "WPLAN",
+                    "WOCLASS": "WORKORDER",
+                    "WONUM": "783547",
+                    "WOPRIORITY": 2,
+                    "WORKORDERID": 258034,
+                    "WORKTYPE": "CM",
+                    "WPLABOR": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -63 -53]",
+                            "CRAFT": "ELECT",
+                            "DISPLAYWONUM": "783547",
+                            "LABORHRS": 0.0,
+                            "QUANTITY": 1,
+                            "RATE": 0.0,
+                            "SITEID": "SMTK",
+                            "SKILLLEVEL": "FIRSTCLASS",
+                            "WONUM": "783547",
+                            "WPLABORID": "19271"
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -63 -54]",
+                            "DISPLAYWONUM": "783547",
+                            "LABORCODE": "BONEY",
+                            "LABORHRS": 2.0,
+                            "QUANTITY": 1,
+                            "RATE": 22.0,
+                            "SITEID": "SMTK",
+                            "WONUM": "783547",
+                            "WPLABORID": "19272"
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -63 -55]",
+                            "DISPLAYWONUM": "783547",
+                            "LABORCODE": "BENETTI",
+                            "LABORHRS": 3.0,
+                            "QUANTITY": 1,
+                            "RATE": 21.5,
+                            "SITEID": "SMTK",
+                            "WONUM": "783547",
+                            "WPLABORID": "19273"
+                        }
+                    ],
+                    "WORKLOG": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 116 78 5]",
+                            "CLASS": "WORKORDER",
+                            "CLIENTVIEWABLE": false,
+                            "CREATEBY": "MOBILE_USER",
+                            "CREATEDATE": "2023-02-23T12:33:01+01:00",
+                            "DESCRIPTION": "Test",
+                            "LOGTYPE": "APPTNOTE",
+                            "MODIFYBY": "MOBILE_USER",
+                            "MODIFYDATE": "2023-02-23T12:33:01+01:00",
+                            "RECORDKEY": "783547",
+                            "SITEID": "SMTK",
+                            "WORKLOGID": 3846
+                        }
+                    ],
+                    "ASSET": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 71 -103 -16]",
+                            "ASSETNUM": "3252",
+                            "ASSETUID": 7412,
+                            "DESCRIPTION": "MOTEUR ELECTRIQUE 5/2,5KW",
+                            "LOCATION": "CENTRAL",
+                            "SITEID": "SMTK"
+                        }
+                    ],
+                    "LOCATIONS": [
+                        {
+                            "rowstamp": "[0 0 0 0 6 94 -55 55]",
+                            "DESCRIPTION": "Repair Shop",
+                            "LOCATION": "REPAIR"
+                        }
+                    ],
+                    "WOACTIVITY": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -63 -42]",
+                            "DESCRIPTION": "Check the voltage unit",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 10,
+                            "WONUM": "T84546",
+                            "WORKORDERID": 258035
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -63 -44]",
+                            "DESCRIPTION": "Measure the  elecrtic voltage",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 20,
+                            "WONUM": "T84547",
+                            "WORKORDERID": 258036
+                        }
+                    ],
+                    "ASSIGNMENT": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -63 -48]",
+                            "APPOINTMENT": false,
+                            "APPTREQUIRED": false,
+                            "ASSIGNMENTID": 43772,
+                            "CRAFT": "PIPE",
+                            "FINISHDATE": "2023-02-16T21:25:08+01:00",
+                            "LABORCODE": "BENETTI",
+                            "LABORHRS": 3.0,
+                            "ORGID": "EAGLENA",
+                            "PARENTASSIGNID": 0,
+                            "SCHEDULEDATE": "2023-02-16T18:25:08+01:00",
+                            "STATUS": "ASSIGNED",
+                            "WORKLOG": false,
+                            "WPLABORID": "19273"
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -63 -47]",
+                            "APPOINTMENT": false,
+                            "APPTREQUIRED": false,
+                            "ASSIGNMENTID": 43771,
+                            "CRAFT": "ELECT",
+                            "FINISHDATE": "2023-02-16T20:25:08+01:00",
+                            "LABORCODE": "BONEY",
+                            "LABORHRS": 2.0,
+                            "ORGID": "EAGLENA",
+                            "PARENTASSIGNID": 0,
+                            "SCHEDULEDATE": "2023-02-16T18:25:08+01:00",
+                            "STATUS": "ASSIGNED",
+                            "WORKLOG": false,
+                            "WPLABORID": "19272"
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -63 -45]",
+                            "APPOINTMENT": false,
+                            "APPTREQUIRED": false,
+                            "ASSIGNMENTID": 43770,
+                            "CRAFT": "ELECT",
+                            "LABORHRS": 0.0,
+                            "ORGID": "EAGLENA",
+                            "PARENTASSIGNID": 0,
+                            "STATUS": "WAITASGN",
+                            "WORKLOG": false,
+                            "WPLABORID": "19271"
+                        }
+                    ],
+                    "WOSERVICEADDRESS": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -63 -52]",
+                            "ADDRESSISCHANGED": false,
+                            "ORGID": "EAGLENA",
+                            "WOSERVICEADDRESSID": 265287
+                        }
+                    ]
+                },
+                {
+                    "rowstamp": "[0 0 0 0 9 86 -62 3]",
+                    "ASSETNUM": "3252",
+                    "DESCRIPTION": "Repair Feedwater system",
+                    "ESTDUR": 0.0,
+                    "FAILURECODE": "MOTEUR",
+                    "GLACCOUNT": "6000-100-200",
+                    "LEAD": "ALLEN",
+                    "LOCATION": "REPAIR",
+                    "ORGID": "EAGLENA",
+                    "PHONE": "+19159478739",
+                    "PROBLEMCODE": "VIBRATIO",
+                    "REPORTDATE": "2023-02-16T18:25:10+01:00",
+                    "REPORTEDBY": "BALL",
+                    "SCHEDSTART": "2023-02-16T18:25:11+01:00",
+                    "SITEID": "SMTK",
+                    "STATUS": "WPLAN",
+                    "WOCLASS": "WORKORDER",
+                    "WONUM": "783548",
+                    "WOPRIORITY": 2,
+                    "WORKORDERID": 258037,
+                    "WORKTYPE": "CM",
+                    "WPLABOR": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -62 5]",
+                            "DISPLAYWONUM": "783548",
+                            "LABORCODE": "BENETTI",
+                            "LABORHRS": 2.0,
+                            "QUANTITY": 1,
+                            "RATE": 21.5,
+                            "SITEID": "SMTK",
+                            "WONUM": "783548",
+                            "WPLABORID": "19274"
+                        }
+                    ],
+                    "WPMATERIAL": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -62 6]",
+                            "DESCRIPTION": "1/2 COPPER PIPE PER ROLL",
+                            "DISPLAYWONUM": "783548",
+                            "ITEMNUM": "AIR-1036",
+                            "ITEMQTY": 1.0,
+                            "LOCATION": "CENTRAL",
+                            "REQUESTBY": "MAXADMIN",
+                            "REQUIREDATE": "2023-02-16T18:25:11+01:00",
+                            "SITEID": "SMTK",
+                            "WPITEMID": 11568
+                        }
+                    ],
+                    "WPTOOL": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -62 8]",
+                            "DESCRIPTION": "TIMING GAUGE",
+                            "DISPLAYWONUM": "783548",
+                            "HOURS": 2.0,
+                            "ITEMNUM": "GAUGE",
+                            "ITEMQTY": 1.0,
+                            "ITEMSETID": "SET1",
+                            "WPITEMID": 11569
+                        }
+                    ],
+                    "ASSET": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 71 -103 -16]",
+                            "ASSETNUM": "3252",
+                            "ASSETUID": 7412,
+                            "DESCRIPTION": "MOTEUR ELECTRIQUE 5/2,5KW",
+                            "LOCATION": "CENTRAL",
+                            "SITEID": "SMTK"
+                        }
+                    ],
+                    "LOCATIONS": [
+                        {
+                            "rowstamp": "[0 0 0 0 6 94 -55 55]",
+                            "DESCRIPTION": "Repair Shop",
+                            "LOCATION": "REPAIR"
+                        }
+                    ],
+                    "WOACTIVITY": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -62 17]",
+                            "DESCRIPTION": "Check the hydraulik fluid",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 10,
+                            "WONUM": "T84548",
+                            "WORKORDERID": 258038
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -62 15]",
+                            "DESCRIPTION": "Remove the filter",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 20,
+                            "WONUM": "T84549",
+                            "WORKORDERID": 258039
+                        }
+                    ],
+                    "ASSIGNMENT": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -62 14]",
+                            "APPOINTMENT": false,
+                            "APPTREQUIRED": false,
+                            "ASSIGNMENTID": 43773,
+                            "CRAFT": "PIPE",
+                            "FINISHDATE": "2023-02-16T20:25:11+01:00",
+                            "LABORCODE": "BENETTI",
+                            "LABORHRS": 2.0,
+                            "ORGID": "EAGLENA",
+                            "PARENTASSIGNID": 0,
+                            "SCHEDULEDATE": "2023-02-16T18:25:11+01:00",
+                            "STATUS": "ASSIGNED",
+                            "WORKLOG": false,
+                            "WPLABORID": "19274"
+                        }
+                    ],
+                    "WOSERVICEADDRESS": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -62 10]",
+                            "ADDRESSISCHANGED": false,
+                            "ORGID": "EAGLENA",
+                            "WOSERVICEADDRESSID": 265292
+                        }
+                    ]
+                },
+                {
+                    "rowstamp": "[0 0 0 0 9 86 -62 89]",
+                    "ASSETNUM": "12994",
+                    "DESCRIPTION": "Check control panel",
+                    "ESTDUR": 0.0,
+                    "FAILURECODE": "PKG",
+                    "GLACCOUNT": "6000-100-200",
+                    "LEAD": "JONES",
+                    "LOCATION": "SHIPPING",
+                    "ORGID": "EAGLENA",
+                    "PHONE": "25568963",
+                    "PROBLEMCODE": "LUBE",
+                    "REPORTDATE": "2023-02-16T18:25:13+01:00",
+                    "REPORTEDBY": "ADAMS",
+                    "SCHEDSTART": "2023-02-16T18:25:14+01:00",
+                    "SITEID": "SMTK",
+                    "STATUS": "WPLAN",
+                    "WOCLASS": "WORKORDER",
+                    "WONUM": "783549",
+                    "WOPRIORITY": 2,
+                    "WORKORDERID": 258040,
+                    "WORKTYPE": "CM",
+                    "WPLABOR": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -62 92]",
+                            "DISPLAYWONUM": "783549",
+                            "LABORCODE": "BONEY",
+                            "LABORHRS": 2.0,
+                            "QUANTITY": 1,
+                            "RATE": 22.0,
+                            "SITEID": "SMTK",
+                            "WONUM": "783549",
+                            "WPLABORID": "19275"
+                        }
+                    ],
+                    "WPMATERIAL": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -62 94]",
+                            "DESCRIPTION": "VOLTAGE REGULATOR",
+                            "DISPLAYWONUM": "783549",
+                            "ITEMNUM": "AIR-1030",
+                            "ITEMQTY": 1.0,
+                            "LOCATION": "CENTRAL",
+                            "REQUESTBY": "MAXADMIN",
+                            "REQUIREDATE": "2023-02-16T18:25:14+01:00",
+                            "SITEID": "SMTK",
+                            "WPITEMID": 11570
+                        }
+                    ],
+                    "WPTOOL": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -62 96]",
+                            "DESCRIPTION": "SIMPSON VOLT/OHMETER",
+                            "DISPLAYWONUM": "783549",
+                            "HOURS": 2.0,
+                            "ITEMNUM": "METER",
+                            "ITEMQTY": 1.0,
+                            "ITEMSETID": "SET1",
+                            "WPITEMID": 11571
+                        }
+                    ],
+                    "ASSET": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 90 -32 43]",
+                            "ASSETNUM": "12994",
+                            "ASSETUID": 11353,
+                            "DESCRIPTION": "Top Breaker System",
+                            "LOCATION": "BPM3100",
+                            "SITEID": "SMTK",
+                            "ASSETMETER": [
+                                {
+                                    "rowstamp": "[0 0 0 0 9 71 -36 73]",
+                                    "ASSETMETERID": 2441,
+                                    "ASSETNUM": "12994",
+                                    "LINEARASSETMETERID": 0,
+                                    "METERNAME": "ENERGY KHW",
+                                    "READINGTYPE": "ACTUAL",
+                                    "SITEID": "SMTK",
+                                    "METER": [
+                                        {
+                                            "rowstamp": "[0 0 0 0 6 86 -91 53]",
+                                            "METERID": 722,
+                                            "METERNAME": "ENERGY KHW",
+                                            "METERTYPE": "CONTINUOUS"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "LOCATIONS": [
+                        {
+                            "rowstamp": "[0 0 0 0 5 -60 59 -99]",
+                            "DESCRIPTION": "Shipping Location",
+                            "LOCATION": "SHIPPING"
+                        }
+                    ],
+                    "WOACTIVITY": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -62 115]",
+                            "DESCRIPTION": "Check tires, lights, horn, mirrors.",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 10,
+                            "WONUM": "T84550",
+                            "WORKORDERID": 258041
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -62 112]",
+                            "DESCRIPTION": "Check windshield wipers and steering.",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 20,
+                            "WONUM": "T84551",
+                            "WORKORDERID": 258042
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -62 110]",
+                            "DESCRIPTION": "Check key,seat, forward/reverse switches.",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 30,
+                            "WONUM": "T84552",
+                            "WORKORDERID": 258043
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -62 108]",
+                            "DESCRIPTION": "Check brakes, brake lights, and emergency brake.",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 40,
+                            "WONUM": "T84553",
+                            "WORKORDERID": 258044
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -62 106]",
+                            "DESCRIPTION": "Check battery. Add water as needed.",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 50,
+                            "WONUM": "T84554",
+                            "WORKORDERID": 258045
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -62 104]",
+                            "DESCRIPTION": "Check terminals and cables, battery charger.",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 60,
+                            "WONUM": "T84555",
+                            "WORKORDERID": 258046
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -62 102]",
+                            "DESCRIPTION": "Lubricate chain and check sprockets.",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 70,
+                            "WONUM": "T84556",
+                            "WORKORDERID": 258047
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -62 100]",
+                            "DESCRIPTION": "Repack wheel bearings. Grease steering chassis.",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 80,
+                            "WONUM": "T84557",
+                            "WORKORDERID": 258048
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -62 98]",
+                            "DESCRIPTION": "Test-operate vehicle and check for safety.",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 90,
+                            "WONUM": "T84558",
+                            "WORKORDERID": 258049
+                        }
+                    ],
+                    "ASSIGNMENT": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -62 93]",
+                            "APPOINTMENT": false,
+                            "APPTREQUIRED": false,
+                            "ASSIGNMENTID": 43774,
+                            "CRAFT": "ELECT",
+                            "FINISHDATE": "2023-02-16T20:25:14+01:00",
+                            "LABORCODE": "BONEY",
+                            "LABORHRS": 2.0,
+                            "ORGID": "EAGLENA",
+                            "PARENTASSIGNID": 0,
+                            "SCHEDULEDATE": "2023-02-16T18:25:14+01:00",
+                            "STATUS": "ASSIGNED",
+                            "WORKLOG": false,
+                            "WPLABORID": "19275"
+                        }
+                    ],
+                    "WOSERVICEADDRESS": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -62 46]",
+                            "ADDRESSISCHANGED": false,
+                            "LATITUDEY": 36.818587313,
+                            "LONGITUDEX": 10.18450042,
+                            "ORGID": "EAGLENA",
+                            "WOSERVICEADDRESSID": 265297
+                        }
+                    ]
+                },
+                {
+                    "rowstamp": "[0 0 0 0 9 86 -61 85]",
+                    "ASSETNUM": "13011",
+                    "DESCRIPTION": "Rebuild centrifugal Pump",
+                    "ESTDUR": 0.0,
+                    "FAILURECODE": "PUMPS",
+                    "GLACCOUNT": "6000-100-200",
+                    "LEAD": "PEDRICK",
+                    "LOCATION": "BR400",
+                    "ORGID": "EAGLENA",
+                    "PHONE": "+19159478739",
+                    "PROBLEMCODE": "LEAK",
+                    "REPORTDATE": "2023-02-16T18:25:20+01:00",
+                    "REPORTEDBY": "BALL",
+                    "SITEID": "SMTK",
+                    "STATUS": "WPLAN",
+                    "WOCLASS": "WORKORDER",
+                    "WONUM": "783550",
+                    "WOPRIORITY": 11,
+                    "WORKORDERID": 258050,
+                    "WORKTYPE": "CM",
+                    "WPLABOR": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -62 -58]",
+                            "CRAFT": "CATERING",
+                            "DISPLAYWONUM": "783550",
+                            "LABORHRS": 0.0,
+                            "QUANTITY": 1,
+                            "RATE": 0.0,
+                            "SITEID": "SMTK",
+                            "WONUM": "783550",
+                            "WPLABORID": "19276"
+                        }
+                    ],
+                    "WPTOOL": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -61 87]",
+                            "DESCRIPTION": "RIDGID 2in. PIPE THREADING MACHINE",
+                            "DISPLAYWONUM": "783550",
+                            "HOURS": 2.0,
+                            "ITEMNUM": "PIPECUT",
+                            "ITEMQTY": 1.0,
+                            "ITEMSETID": "SET1",
+                            "WPITEMID": 11572
+                        }
+                    ],
+                    "ASSET": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 71 -13 82]",
+                            "ASSETNUM": "13011",
+                            "ASSETUID": 11371,
+                            "DESCRIPTION": "Caustic Transfer Pump (A)",
+                            "LOCATION": "SHIPPING",
+                            "SITEID": "SMTK",
+                            "ASSETMETER": [
+                                {
+                                    "rowstamp": "[0 0 0 0 9 71 -14 41]",
+                                    "ASSETMETERID": 2460,
+                                    "ASSETNUM": "13011",
+                                    "LINEARASSETMETERID": 0,
+                                    "METERNAME": "ENERGY",
+                                    "READINGTYPE": "DELTA",
+                                    "SITEID": "SMTK",
+                                    "METER": [
+                                        {
+                                            "rowstamp": "[0 0 0 0 1 11 -6 -61]",
+                                            "METERID": 220,
+                                            "METERNAME": "ENERGY",
+                                            "METERTYPE": "CONTINUOUS"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "rowstamp": "[0 0 0 0 9 71 -15 -60]",
+                                    "ASSETMETERID": 2464,
+                                    "ASSETNUM": "13011",
+                                    "LINEARASSETMETERID": 0,
+                                    "METERNAME": "ENERGY KHW",
+                                    "READINGTYPE": "ACTUAL",
+                                    "SITEID": "SMTK",
+                                    "METER": [
+                                        {
+                                            "rowstamp": "[0 0 0 0 6 86 -91 53]",
+                                            "METERID": 722,
+                                            "METERNAME": "ENERGY KHW",
+                                            "METERTYPE": "CONTINUOUS"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "rowstamp": "[0 0 0 0 9 71 -15 -47]",
+                                    "ASSETMETERID": 2461,
+                                    "ASSETNUM": "13011",
+                                    "LINEARASSETMETERID": 0,
+                                    "MEASUREUNITID": "GALS",
+                                    "METERNAME": "FUEL-G",
+                                    "READINGTYPE": "DELTA",
+                                    "SITEID": "SMTK",
+                                    "METER": [
+                                        {
+                                            "rowstamp": "[0 0 0 0 0 3 -84 -115]",
+                                            "METERID": 13,
+                                            "METERNAME": "FUEL-G",
+                                            "METERTYPE": "CONTINUOUS"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "rowstamp": "[0 0 0 0 9 71 -14 70]",
+                                    "ASSETMETERID": 2462,
+                                    "ASSETNUM": "13011",
+                                    "LINEARASSETMETERID": 0,
+                                    "MEASUREUNITID": "LTRS",
+                                    "METERNAME": "FUEL-L",
+                                    "READINGTYPE": "DELTA",
+                                    "SITEID": "SMTK",
+                                    "METER": [
+                                        {
+                                            "rowstamp": "[0 0 0 0 0 3 -84 -114]",
+                                            "METERID": 14,
+                                            "METERNAME": "FUEL-L",
+                                            "METERTYPE": "CONTINUOUS"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "rowstamp": "[0 0 0 0 9 71 -14 33]",
+                                    "ASSETMETERID": 2459,
+                                    "ASSETNUM": "13011",
+                                    "LINEARASSETMETERID": 0,
+                                    "MEASUREUNITID": "PSI",
+                                    "METERNAME": "PRESSURE",
+                                    "READINGTYPE": "DELTA",
+                                    "SITEID": "SMTK",
+                                    "METER": [
+                                        {
+                                            "rowstamp": "[0 0 0 0 0 3 -84 -118]",
+                                            "METERID": 10,
+                                            "METERNAME": "PRESSURE",
+                                            "METERTYPE": "GAUGE"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "rowstamp": "[0 0 0 0 9 71 -15 -53]",
+                                    "ASSETMETERID": 2463,
+                                    "ASSETNUM": "13011",
+                                    "LINEARASSETMETERID": 0,
+                                    "MEASUREUNITID": "DEG F",
+                                    "METERNAME": "TEMP-F",
+                                    "READINGTYPE": "DELTA",
+                                    "SITEID": "SMTK",
+                                    "METER": [
+                                        {
+                                            "rowstamp": "[0 0 0 0 0 3 -84 -122]",
+                                            "METERID": 6,
+                                            "METERNAME": "TEMP-F",
+                                            "METERTYPE": "GAUGE"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "LOCATIONS": [
+                        {
+                            "rowstamp": "[0 0 0 0 5 -60 59 18]",
+                            "DESCRIPTION": "Main Boiler- 50,000 Lb/Hr",
+                            "LOCATION": "BR400"
+                        }
+                    ],
+                    "WOACTIVITY": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -62 -22]",
+                            "DESCRIPTION": "Check pump operation.",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 10,
+                            "WONUM": "T84559",
+                            "WORKORDERID": 258051
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -62 -6]",
+                            "DESCRIPTION": "Check pump float switch.",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 20,
+                            "WONUM": "T84560",
+                            "WORKORDERID": 258052
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -61 15]",
+                            "DESCRIPTION": "Check for leaks.",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 30,
+                            "WONUM": "T84561",
+                            "WORKORDERID": 258053
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -61 32]",
+                            "DESCRIPTION": "Inspect main disconnect and all electrical.",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 40,
+                            "WONUM": "T84562",
+                            "WORKORDERID": 258054
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -61 49]",
+                            "DESCRIPTION": "Clean contactors and contactor compartment.",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 50,
+                            "WONUM": "T84563",
+                            "WORKORDERID": 258055
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -61 69]",
+                            "DESCRIPTION": "Inspect floats and replace main gasket on housing.",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 60,
+                            "WONUM": "T84564",
+                            "WORKORDERID": 258056
+                        }
+                    ],
+                    "ASSIGNMENT": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -62 -53]",
+                            "APPOINTMENT": false,
+                            "APPTREQUIRED": false,
+                            "ASSIGNMENTID": 43775,
+                            "CRAFT": "CATERING",
+                            "LABORHRS": 0.0,
+                            "ORGID": "EAGLENA",
+                            "PARENTASSIGNID": 0,
+                            "STATUS": "WAITASGN",
+                            "WORKLOG": false,
+                            "WPLABORID": "19276"
+                        }
+                    ],
+                    "WOSERVICEADDRESS": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -62 -57]",
+                            "ADDRESSISCHANGED": false,
+                            "ORGID": "EAGLENA",
+                            "WOSERVICEADDRESSID": 265316
+                        }
+                    ]
+                },
+                {
+                    "rowstamp": "[0 0 0 0 9 86 -60 -102]",
+                    "ASSETNUM": "12995",
+                    "DESCRIPTION": "Remove electrical Subsystems and components.",
+                    "ESTDUR": 0.0,
+                    "FAILURECODE": "PKG",
+                    "GLACCOUNT": "6000-100-200",
+                    "LEAD": "PEDRICK",
+                    "LOCATION": "SHIPPING",
+                    "ORGID": "EAGLENA",
+                    "PHONE": "+19159478739",
+                    "PROBLEMCODE": "LUBE",
+                    "REPORTDATE": "2023-02-16T18:25:30+01:00",
+                    "REPORTEDBY": "BALL",
+                    "SITEID": "SMTK",
+                    "STATUS": "WPLAN",
+                    "WOCLASS": "WORKORDER",
+                    "WONUM": "783551",
+                    "WOPRIORITY": 26,
+                    "WORKORDERID": 258057,
+                    "WORKTYPE": "CM",
+                    "WPLABOR": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -60 -128]",
+                            "CRAFT": "CATERING",
+                            "DISPLAYWONUM": "783551",
+                            "LABORHRS": 0.0,
+                            "QUANTITY": 1,
+                            "RATE": 0.0,
+                            "SITEID": "SMTK",
+                            "SKILLLEVEL": "APPRENTICE",
+                            "WONUM": "783551",
+                            "WPLABORID": "19277"
+                        }
+                    ],
+                    "WPMATERIAL": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -60 113]",
+                            "DESCRIPTION": "Relais - Boîte de raccordement principale",
+                            "DISPLAYWONUM": "783551",
+                            "ITEMNUM": "140-2919",
+                            "ITEMQTY": 1.0,
+                            "LOCATION": "CENTRAL",
+                            "REQUESTBY": "MAXADMIN",
+                            "REQUIREDATE": "2023-02-16T18:25:38+01:00",
+                            "SITEID": "SMTK",
+                            "WPITEMID": 11573
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -60 -110]",
+                            "DESCRIPTION": "Roulement, palier à semelle, Fafnir- DI de 2,54 cm",
+                            "DISPLAYWONUM": "783551",
+                            "ITEMNUM": "217215",
+                            "ITEMQTY": 1.0,
+                            "LOCATION": "CENTRAL",
+                            "REQUESTBY": "MAXADMIN",
+                            "REQUIREDATE": "2023-02-16T18:25:39+01:00",
+                            "SITEID": "SMTK",
+                            "WPITEMID": 11575
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -60 -120]",
+                            "DESCRIPTION": "Soupape, pointeau - 0,63 cm",
+                            "DISPLAYWONUM": "783551",
+                            "ITEMNUM": "0-7205",
+                            "ITEMQTY": 1.0,
+                            "LOCATION": "CENTRAL",
+                            "REQUESTBY": "MAXADMIN",
+                            "REQUIREDATE": "2023-02-16T18:25:39+01:00",
+                            "SITEID": "SMTK",
+                            "WPITEMID": 11574
+                        }
+                    ],
+                    "WPTOOL": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -60 -100]",
+                            "DESCRIPTION": "HEPA Filter Equipped Duct Vacuum, 4,000 CFM",
+                            "DISPLAYWONUM": "783551",
+                            "HOURS": 0.0,
+                            "ITEMNUM": "HEPAVAC",
+                            "ITEMQTY": 1.0,
+                            "ITEMSETID": "SET1",
+                            "WPITEMID": 11576
+                        }
+                    ],
+                    "ASSET": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 103 -8 115]",
+                            "ASSETNUM": "12995",
+                            "ASSETUID": 11354,
+                            "DESCRIPTION": "Filler And Lifter System",
+                            "LOCATION": "BPM3100",
+                            "SITEID": "SMTK",
+                            "ASSETMETER": [
+                                {
+                                    "rowstamp": "[0 0 0 0 9 71 -36 81]",
+                                    "ASSETMETERID": 2442,
+                                    "ASSETNUM": "12995",
+                                    "LINEARASSETMETERID": 0,
+                                    "MEASUREUNITID": "LTRS",
+                                    "METERNAME": "FUEL-L",
+                                    "READINGTYPE": "DELTA",
+                                    "SITEID": "SMTK",
+                                    "METER": [
+                                        {
+                                            "rowstamp": "[0 0 0 0 0 3 -84 -114]",
+                                            "METERID": 14,
+                                            "METERNAME": "FUEL-L",
+                                            "METERTYPE": "CONTINUOUS"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "LOCATIONS": [
+                        {
+                            "rowstamp": "[0 0 0 0 5 -60 59 -99]",
+                            "DESCRIPTION": "Shipping Location",
+                            "LOCATION": "SHIPPING"
+                        }
+                    ],
+                    "WOACTIVITY": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -61 -116]",
+                            "DESCRIPTION": "Check tires, lights, horn, mirrors.",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 10,
+                            "WONUM": "T84565",
+                            "WORKORDERID": 258058
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -61 -95]",
+                            "DESCRIPTION": "Check windshield wipers and steering.",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 20,
+                            "WONUM": "T84566",
+                            "WORKORDERID": 258059
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -61 -67]",
+                            "DESCRIPTION": "Check key,seat, forward/reverse switches.",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 30,
+                            "WONUM": "T84567",
+                            "WORKORDERID": 258060
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -61 -5]",
+                            "DESCRIPTION": "Check brakes, brake lights, and emergency brake.",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 40,
+                            "WONUM": "T84568",
+                            "WORKORDERID": 258061
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -60 14]",
+                            "DESCRIPTION": "Check battery. Add water as needed.",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 50,
+                            "WONUM": "T84569",
+                            "WORKORDERID": 258062
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -60 38]",
+                            "DESCRIPTION": "Check terminals and cables, battery charger.",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 60,
+                            "WONUM": "T84570",
+                            "WORKORDERID": 258063
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -60 58]",
+                            "DESCRIPTION": "Lubricate chain and check sprockets.",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 70,
+                            "WONUM": "T84571",
+                            "WORKORDERID": 258064
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -60 76]",
+                            "DESCRIPTION": "Repack wheel bearings. Grease steering chassis.",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 80,
+                            "WONUM": "T84572",
+                            "WORKORDERID": 258065
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -60 96]",
+                            "DESCRIPTION": "Test-operate vehicle and check for safety.",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 90,
+                            "WONUM": "T84573",
+                            "WORKORDERID": 258066
+                        }
+                    ],
+                    "ASSIGNMENT": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -60 -127]",
+                            "APPOINTMENT": false,
+                            "APPTREQUIRED": false,
+                            "ASSIGNMENTID": 43776,
+                            "CRAFT": "CATERING",
+                            "LABORHRS": 0.0,
+                            "ORGID": "EAGLENA",
+                            "PARENTASSIGNID": 0,
+                            "STATUS": "WAITASGN",
+                            "WORKLOG": false,
+                            "WPLABORID": "19277"
+                        }
+                    ],
+                    "WOSERVICEADDRESS": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -61 116]",
+                            "ADDRESSISCHANGED": false,
+                            "LATITUDEY": 36.818587313,
+                            "LONGITUDEX": 10.18450042,
+                            "ORGID": "EAGLENA",
+                            "WOSERVICEADDRESSID": 265329
+                        }
+                    ]
+                },
+                {
+                    "rowstamp": "[0 0 0 0 9 86 -60 -81]",
+                    "ASSETNUM": "13016",
+                    "DESCRIPTION": "Check pump operation.",
+                    "ESTDUR": 0.0,
+                    "FAILURECODE": "PUMPS",
+                    "GLACCOUNT": "6000-100-200",
+                    "LEAD": "ADAMS",
+                    "LOCATION": "REPAIR",
+                    "ORGID": "EAGLENA",
+                    "PHONE": "+19159478739",
+                    "PROBLEMCODE": "LEAK",
+                    "REPORTDATE": "2023-02-16T18:25:40+01:00",
+                    "REPORTEDBY": "PEDRICK",
+                    "SITEID": "SMTK",
+                    "STATUS": "WPLAN",
+                    "WOCLASS": "WORKORDER",
+                    "WONUM": "783552",
+                    "WOPRIORITY": 1,
+                    "WORKORDERID": 258067,
+                    "WORKTYPE": "CM",
+                    "WPLABOR": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -60 -79]",
+                            "CRAFT": "ELECT",
+                            "DISPLAYWONUM": "783552",
+                            "LABORHRS": 0.0,
+                            "QUANTITY": 1,
+                            "RATE": 0.0,
+                            "SITEID": "SMTK",
+                            "SKILLLEVEL": "FIRSTCLASS",
+                            "WONUM": "783552",
+                            "WPLABORID": "19278"
+                        }
+                    ],
+                    "ASSET": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 71 -13 -90]",
+                            "ASSETNUM": "13016",
+                            "ASSETUID": 11376,
+                            "DESCRIPTION": "CALCIUM HYPOCHLORITE DOSING PUMP A ",
+                            "LOCATION": "SHIPPING",
+                            "SITEID": "SMTK",
+                            "ASSETMETER": [
+                                {
+                                    "rowstamp": "[0 0 0 0 9 76 -35 48]",
+                                    "ASSETMETERID": 2469,
+                                    "ASSETNUM": "13016",
+                                    "LASTREADING": "80",
+                                    "LASTREADINGDATE": "2023-02-14T16:02:00+01:00",
+                                    "LINEARASSETMETERID": 0,
+                                    "MEASUREUNITID": "PSI",
+                                    "METERNAME": "PRESSURE",
+                                    "READINGTYPE": "ACTUAL",
+                                    "SITEID": "SMTK",
+                                    "METER": [
+                                        {
+                                            "rowstamp": "[0 0 0 0 0 3 -84 -118]",
+                                            "METERID": 10,
+                                            "METERNAME": "PRESSURE",
+                                            "METERTYPE": "GAUGE"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "LOCATIONS": [
+                        {
+                            "rowstamp": "[0 0 0 0 6 94 -55 55]",
+                            "DESCRIPTION": "Repair Shop",
+                            "LOCATION": "REPAIR"
+                        }
+                    ],
+                    "WOACTIVITY": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -60 -67]",
+                            "DESCRIPTION": "Check pump operation.",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 10,
+                            "WONUM": "T84574",
+                            "WORKORDERID": 258068
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -60 -69]",
+                            "DESCRIPTION": "Check pump float switch.",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 20,
+                            "WONUM": "T84575",
+                            "WORKORDERID": 258069
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -60 -71]",
+                            "DESCRIPTION": "Check for leaks.",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 30,
+                            "WONUM": "T84576",
+                            "WORKORDERID": 258070
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -60 -73]",
+                            "DESCRIPTION": "Inspect main disconnect and all electrical.",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 40,
+                            "WONUM": "T84577",
+                            "WORKORDERID": 258071
+                        }
+                    ],
+                    "ASSIGNMENT": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -60 -74]",
+                            "APPOINTMENT": false,
+                            "APPTREQUIRED": false,
+                            "ASSIGNMENTID": 43777,
+                            "CRAFT": "ELECT",
+                            "LABORHRS": 0.0,
+                            "ORGID": "EAGLENA",
+                            "PARENTASSIGNID": 0,
+                            "STATUS": "WAITASGN",
+                            "WORKLOG": false,
+                            "WPLABORID": "19278"
+                        }
+                    ],
+                    "WOSERVICEADDRESS": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -60 -78]",
+                            "ADDRESSISCHANGED": false,
+                            "ORGID": "EAGLENA",
+                            "WOSERVICEADDRESSID": 265348
+                        }
+                    ]
+                },
+                {
+                    "rowstamp": "[0 0 0 0 9 86 -59 27]",
+                    "ASSETNUM": "12996",
+                    "DESCRIPTION": "Clean contactors and contactor compartment.",
+                    "ESTDUR": 0.0,
+                    "FAILURECODE": "MOTEUR",
+                    "GLACCOUNT": "6000-100-200",
+                    "LEAD": "ADAMS",
+                    "LOCATION": "BPM3100",
+                    "ORGID": "EAGLENA",
+                    "PHONE": "+19159478739",
+                    "PROBLEMCODE": "VIBRATIO",
+                    "REPORTDATE": "2023-02-16T18:25:43+01:00",
+                    "REPORTEDBY": "PEDRICK",
+                    "SITEID": "SMTK",
+                    "STATUS": "WPLAN",
+                    "WOCLASS": "WORKORDER",
+                    "WONUM": "783553",
+                    "WOPRIORITY": 1,
+                    "WORKORDERID": 258072,
+                    "WORKTYPE": "CM",
+                    "WPLABOR": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -59 33]",
+                            "CRAFT": "CATERING",
+                            "DISPLAYWONUM": "783553",
+                            "LABORHRS": 0.0,
+                            "QUANTITY": 1,
+                            "RATE": 0.0,
+                            "SITEID": "SMTK",
+                            "SKILLLEVEL": "APPRENTICE",
+                            "WONUM": "783553",
+                            "WPLABORID": "19279"
+                        }
+                    ],
+                    "WPMATERIAL": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -59 35]",
+                            "DESCRIPTION": "Coude, Raccord mixte - 90 deg, 2,54 cm",
+                            "DISPLAYWONUM": "783553",
+                            "ITEMNUM": "230-00",
+                            "ITEMQTY": 1.0,
+                            "LOCATION": "CENTRAL",
+                            "REQUESTBY": "MAXADMIN",
+                            "REQUIREDATE": "2023-02-16T18:25:45+01:00",
+                            "SITEID": "SMTK",
+                            "WPITEMID": 11579
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -59 37]",
+                            "DESCRIPTION": "Soupape, pointeau - 0,63 cm",
+                            "DISPLAYWONUM": "783553",
+                            "ITEMNUM": "0-7205",
+                            "ITEMQTY": 1.0,
+                            "LOCATION": "CENTRAL",
+                            "REQUESTBY": "MAXADMIN",
+                            "REQUIREDATE": "2023-02-16T18:25:45+01:00",
+                            "SITEID": "SMTK",
+                            "WPITEMID": 11578
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -60 -13]",
+                            "DESCRIPTION": "Relais - Boîte de raccordement principale",
+                            "DISPLAYWONUM": "783553",
+                            "ITEMNUM": "140-2919",
+                            "ITEMQTY": 1.0,
+                            "LOCATION": "CENTRAL",
+                            "REQUESTBY": "MAXADMIN",
+                            "REQUIREDATE": "2023-02-16T18:25:44+01:00",
+                            "SITEID": "SMTK",
+                            "WPITEMID": 11577
+                        }
+                    ],
+                    "WPTOOL": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -59 39]",
+                            "DESCRIPTION": "MILWAUKEE 3in. BAND SAW",
+                            "DISPLAYWONUM": "783553",
+                            "HOURS": 0.0,
+                            "ITEMNUM": "BANDSAW",
+                            "ITEMQTY": 1.0,
+                            "ITEMSETID": "SET1",
+                            "WPITEMID": 11582
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -59 41]",
+                            "DESCRIPTION": "Single Axle Dump Truck",
+                            "DISPLAYWONUM": "783553",
+                            "HOURS": 0.0,
+                            "ITEMNUM": "DUMP TRUCK",
+                            "ITEMQTY": 1.0,
+                            "ITEMSETID": "SET1",
+                            "WPITEMID": 11581
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -59 43]",
+                            "DESCRIPTION": "HEPA Filter Equipped Duct Vacuum, 4,000 CFM",
+                            "DISPLAYWONUM": "783553",
+                            "HOURS": 0.0,
+                            "ITEMNUM": "HEPAVAC",
+                            "ITEMQTY": 1.0,
+                            "ITEMSETID": "SET1",
+                            "WPITEMID": 11580
+                        }
+                    ],
+                    "ASSET": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 90 -32 59]",
+                            "ASSETNUM": "12996",
+                            "ASSETUID": 11355,
+                            "DESCRIPTION": "Lubrication System",
+                            "LOCATION": "BPM3100",
+                            "SITEID": "SMTK",
+                            "ASSETMETER": [
+                                {
+                                    "rowstamp": "[0 0 0 0 9 90 -32 61]",
+                                    "ASSETMETERID": 2508,
+                                    "ASSETNUM": "12996",
+                                    "LINEARASSETMETERID": 0,
+                                    "METERNAME": "ENERGY KHW",
+                                    "READINGTYPE": "DELTA",
+                                    "SITEID": "SMTK",
+                                    "METER": [
+                                        {
+                                            "rowstamp": "[0 0 0 0 6 86 -91 53]",
+                                            "METERID": 722,
+                                            "METERNAME": "ENERGY KHW",
+                                            "METERTYPE": "CONTINUOUS"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "rowstamp": "[0 0 0 0 9 71 -36 92]",
+                                    "ASSETMETERID": 2443,
+                                    "ASSETNUM": "12996",
+                                    "LINEARASSETMETERID": 0,
+                                    "MEASUREUNITID": "PSI",
+                                    "METERNAME": "PRESSURE",
+                                    "READINGTYPE": "DELTA",
+                                    "SITEID": "SMTK",
+                                    "METER": [
+                                        {
+                                            "rowstamp": "[0 0 0 0 0 3 -84 -118]",
+                                            "METERID": 10,
+                                            "METERNAME": "PRESSURE",
+                                            "METERTYPE": "GAUGE"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "LOCATIONS": [
+                        {
+                            "rowstamp": "[0 0 0 0 6 94 -54 5]",
+                            "DESCRIPTION": "#2 Liquid Packaging Line",
+                            "LOCATION": "BPM3100"
+                        }
+                    ],
+                    "WOACTIVITY": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -59 47]",
+                            "DESCRIPTION": "Check contactor",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 10,
+                            "WONUM": "T84578",
+                            "WORKORDERID": 258073
+                        },
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -59 45]",
+                            "DESCRIPTION": "Clean contactor",
+                            "SITEID": "SMTK",
+                            "STATUS": "WPLAN",
+                            "TASKID": 20,
+                            "WONUM": "T84579",
+                            "WORKORDERID": 258075
+                        }
+                    ],
+                    "ASSIGNMENT": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -59 34]",
+                            "APPOINTMENT": false,
+                            "APPTREQUIRED": false,
+                            "ASSIGNMENTID": 43778,
+                            "CRAFT": "CATERING",
+                            "LABORHRS": 0.0,
+                            "ORGID": "EAGLENA",
+                            "PARENTASSIGNID": 0,
+                            "STATUS": "WAITASGN",
+                            "WORKLOG": false,
+                            "WPLABORID": "19279"
+                        }
+                    ],
+                    "WOSERVICEADDRESS": [
+                        {
+                            "rowstamp": "[0 0 0 0 9 86 -59 29]",
+                            "ADDRESSISCHANGED": false,
+                            "LATITUDEY": 36.818587313,
+                            "LONGITUDEX": 10.18450042,
+                            "ORGID": "EAGLENA",
+                            "WOSERVICEADDRESSID": 265357
+                        }
+                    ]
+                }
+            ]
