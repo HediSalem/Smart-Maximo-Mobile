@@ -18,6 +18,7 @@ export const login = async (username, password) => {
           _lid: username,
           _lpwd: password,
         },
+        timeout: 1000,
       },
     );
     if (response.status === 200) {

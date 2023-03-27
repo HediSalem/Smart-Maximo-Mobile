@@ -1,8 +1,9 @@
 import SQLite from 'react-native-sqlite-storage';
-export const insertDataIntoDatabase = async ({responseDetail}) => {
+export const insertDataIntoDatabase = async responseDetail => {
   try {
     const db = SQLite.openDatabase({name: 'WorkOrder.db'});
     const data = responseDetail;
+    console.log('data database', data);
 
     db.transaction(tx => {
       tx.executeSql(
@@ -13,7 +14,7 @@ export const insertDataIntoDatabase = async ({responseDetail}) => {
           data.forEach(item => {
             console.log('inserting item:', item);
             tx.executeSql(
-              'INSERT INTO myTable (wonum, status,location,wopriority,description) VALUES (?, ?,?,?,?)',
+              'INSERT INTO Workorder (wonum, status,location,wopriority,description) VALUES (?, ?,?,?,?)',
               [
                 item.wonum,
                 item.status,

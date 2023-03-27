@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, StyleSheet} from 'react-native';
 import {useRoute} from '@react-navigation/native';
 
+import {insertDataIntoDatabase} from '../../../database/Database';
 import MyFlatlist from '../../components/MyFlatlist';
-
 import CommonHeader from '../../components/CommonHeader';
 import SearchBar from '../../components/SearchBar';
 
@@ -11,8 +11,11 @@ const WorkOrderListScreen = () => {
   const [searchPhrase, setSearchPhrase] = useState('');
   const [clicked, setClicked] = useState(false);
   const route = useRoute();
-  const {responseDetail} = route.params || {};
+  const {responseDetail} = route.params;
   const title = 'Work order list';
+  useEffect(() => {
+    insertDataIntoDatabase(responseDetail);
+  }, [responseDetail]);
 
   return (
     <View>

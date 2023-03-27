@@ -1,20 +1,27 @@
 import React, {useState} from 'react';
-import {View, Text, TextInput, StyleSheet, Alert} from 'react-native';
+import {
+  View,
+  Text,
+  TextInput,
+  StyleSheet,
+  Alert,
+  ActivityIndicator,
+} from 'react-native';
 import {Button} from '@react-native-material/core';
 import {useSurfaceScale} from '@react-native-material/core/src/hooks/use-surface-scale';
 import Colors from '../../Styles/Colors';
 import {login, getWoDetail} from '../../api/DataApis';
-import {insertDataIntoDatabase} from '../../database/Database';
 import {useNavigation} from '@react-navigation/native';
 
 const LoginScreen = () => {
   const scale = useSurfaceScale();
   const navigation = useNavigation();
-
+  const [loading, setLoading] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handlePress = async () => {
+    setLoading(true);
     const response = await login(username, password);
     if (response.success) {
       const responseDetail = await getWoDetail();
@@ -22,7 +29,6 @@ const LoginScreen = () => {
         screen: 'WorkOrder',
         params: {responseDetail: responseDetail},
       });
-      insertDataIntoDatabase(responseDetail);
     } else {
       if (
         response.error &&
@@ -31,11 +37,19 @@ const LoginScreen = () => {
         response.error.response.data.Error &&
         response.error.response.data.Error.message
       ) {
+        setLoading(false);
         Alert.alert('Login Failed', response.error.response.data.Error.message);
       }
     }
+    setLoading(false);
   };
-
+  if (loading) {
+    return (
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        <ActivityIndicator size="large" />
+      </View>
+    );
+  }
   return (
     <View style={[styles.container, {backgroundColor: scale(0).hex()}]}>
       <Text style={styles.title}>Login</Text>
