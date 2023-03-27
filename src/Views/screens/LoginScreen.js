@@ -4,62 +4,35 @@ import {Button} from '@react-native-material/core';
 import {useSurfaceScale} from '@react-native-material/core/src/hooks/use-surface-scale';
 import Colors from '../../Styles/Colors';
 import {login, getWoDetail} from '../../api/DataApis';
-import SQLite from 'react-native-sqlite-storage';
+import {insertDataIntoDatabase} from '../../database/Database';
+import {useNavigation} from '@react-navigation/native';
 
-const LoginScreen = ({LoginStatus}) => {
+const LoginScreen = () => {
   const scale = useSurfaceScale();
-  const db = SQLite.openDatabase({name: 'myDatabase.db'});
+  const navigation = useNavigation();
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const insertDataIntoDatabase = async () => {
-    try {
-      const responseDetail = await getWoDetail();
-      const data = responseDetail;
-      db.transaction(tx => {
-        tx.executeSql(
-          'CREATE TABLE IF NOT EXISTS myTable (wonum TEXT PRIMARY KEY, status TEXT, siteid TEXT,wopriority INTEGER, description TEXT)',
-          [],
-          () => {
-            console.log('database created');
-            data.forEach(item => {
-              console.log('inserting item:', item);
-              tx.executeSql(
-                'INSERT INTO myTable (wonum, status,siteid,wopriority,description) VALUES (?, ?,?,?,?)',
-                [
-                  item.wonum,
-                  item.status,
-                  item.siteid,
-                  item.wopriority,
-                  item.description,
-                ],
-                () => {
-                  console.log(`Inserted ${item.wonum} into the database`);
-                },
-                error => {
-                  console.log(`Error inserting ${item.wonum}: ${error}`);
-                },
-              );
-            });
-          },
-          error => {
-            console.log(`Error creating table: ${error}`);
-          },
-        );
-      });
-    } catch (error) {
-      console.log(`Error: ${error}`);
-    }
-  };
+
   const handlePress = async () => {
     const response = await login(username, password);
     if (response.success) {
-      console.log('Login successful!', response.data);
-      LoginStatus(true);
-      insertDataIntoDatabase();
+      const responseDetail = await getWoDetail();
+      navigation.navigate('MainTabs', {
+        screen: 'WorkOrder',
+        params: {responseDetail: responseDetail},
+      });
+      insertDataIntoDatabase(responseDetail);
     } else {
-      if (response.error.response.data.Error.message)
+      if (
+        response.error &&
+        response.error.response &&
+        response.error.response.data &&
+        response.error.response.data.Error &&
+        response.error.response.data.Error.message
+      ) {
         Alert.alert('Login Failed', response.error.response.data.Error.message);
+      }
     }
   };
 

@@ -2,17 +2,17 @@ import React from 'react';
 import ListItem from './ListItem';
 import {FlatList, View} from 'react-native';
 
-function MyFlatlist({data, searchPhrase, setCLicked}) {
+function MyFlatlist({data, searchPhrase}) {
   const renderItem = ({item}) => {
     if (searchPhrase === '') {
       return (
         <View>
           <ListItem
-            title={item.DESCRIPTION}
-            overline={item.WONUM}
-            meta={item.STATUS}
-            secondaryText={item.ASSETNUM}
-            location={item.LOCATION}
+            title={item.description}
+            overline={item.wonum}
+            meta={item.status}
+            secondaryText={item.assetnum}
+            location={item.location}
             item={item}
             allData={data}
           />
@@ -26,11 +26,11 @@ function MyFlatlist({data, searchPhrase, setCLicked}) {
     ) {
       return (
         <ListItem
-          title={item.DESCRIPTION}
-          overline={item.WONUM}
-          meta={item.STATUS}
-          secondaryText={item.ASSETNUM}
-          location={item.LOCATION}
+          title={item.description}
+          overline={item.wonum}
+          meta={item.status}
+          secondaryText={item.assetnum}
+          location={item.location}
           item={item}
           allData={data}
         />
@@ -40,7 +40,7 @@ function MyFlatlist({data, searchPhrase, setCLicked}) {
   return (
     <FlatList
       data={data}
-      keyExtractor={workorder => workorder.WORKORDERID.toString()}
+      keyExtractor={workorder => workorder.workorderid.toString()}
       renderItem={renderItem}
       initialNumToRender={5}
     />

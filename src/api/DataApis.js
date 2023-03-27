@@ -35,7 +35,6 @@ export const getWoDetail = async () => {
     );
 
     const data = response.data.member;
-    console.log('api sucess', data);
     return data;
   } catch (error) {
     return error;
