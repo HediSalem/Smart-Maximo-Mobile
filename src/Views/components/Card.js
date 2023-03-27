@@ -1,8 +1,7 @@
 import React from 'react';
 import {Text, StyleSheet, View, ScrollView} from 'react-native';
 import {useSurfaceScale} from '@react-native-material/core/src/hooks/use-surface-scale';
-
-import Colors from '../../../config/Colors';
+import Colors from '../../Styles/Colors';
 
 function Card({cardData}) {
   const scale = useSurfaceScale();

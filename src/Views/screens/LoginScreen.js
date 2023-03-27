@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {View, Text, TextInput, StyleSheet, Alert} from 'react-native';
 import {Button} from '@react-native-material/core';
 import {useSurfaceScale} from '@react-native-material/core/src/hooks/use-surface-scale';
-import Colors from '../../../config/Colors';
+import Colors from '../../Styles/Colors';
 import {login, getWoDetail} from '../../api/DataApis';
 import SQLite from 'react-native-sqlite-storage';
 
@@ -58,9 +58,8 @@ const LoginScreen = ({LoginStatus}) => {
       LoginStatus(true);
       insertDataIntoDatabase();
     } else {
-      if (response.error.response.data.Error.message) {
+      if (response.error.response.data.Error.message)
         Alert.alert('Login Failed', response.error.response.data.Error.message);
-      }
     }
   };
 

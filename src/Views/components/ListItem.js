@@ -6,7 +6,7 @@ import Pressable from '@react-native-material/core/src/Pressable';
 import {useSurfaceScale} from '@react-native-material/core/src/hooks/use-surface-scale';
 import {Stack, Button} from '@react-native-material/core';
 import {useNavigation} from '@react-navigation/native';
-import Colors from '../../../config/Colors';
+import Colors from '../../Styles/Colors';
 const ListItem = ({
   title,
   secondaryText,

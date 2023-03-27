@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
-import Colors from '../../../config/Colors';
+import Colors from '../../Styles/Colors';
 const CommonHeader = ({title}) => {
   return (
     <View style={styles.header}>

@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, TextInput, View, Keyboard} from 'react-native';
 import Ionic from 'react-native-vector-icons/Ionicons';
 import {Button} from '@react-native-material/core';
-import Colors from '../../../config/Colors';
+import Colors from '../../Styles/Colors';
 const SearchBar = ({clicked, searchPhrase, setSearchPhrase, setClicked}) => {
   return (
     <View style={styles.container}>
