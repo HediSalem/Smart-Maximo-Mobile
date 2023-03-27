@@ -103,7 +103,7 @@ const ListItem = ({
               style={{
                 backgroundColor: 'lightgray',
                 borderRadius: 20,
-                width: '23%',
+                width: '18%',
               }}>
               {meta && (
                 <Text
@@ -112,7 +112,6 @@ const ListItem = ({
                   style={{
                     color: scale(0.87).hex(),
                     fontWeight: '500',
-                    fontSize: 15,
                     textAlign: 'center',
                   }}>
                   {meta}
@@ -146,7 +145,7 @@ const ListItem = ({
               {location}
             </Text>
           )}
-          <Stack fill direction="row" style={{marginTop: '2%'}} spacing={6}>
+          <Stack fill direction="row" spacing={4}>
             <Button title="Assist" color={Colors.navyBlue} />
             <Button title="Expert" color={Colors.navyBlue} variant="outlined" />
           </Stack>
