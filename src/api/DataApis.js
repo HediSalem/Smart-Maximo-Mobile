@@ -28,16 +28,15 @@ export const login = async (username, password) => {
     return {success: false, error: error};
   }
 };
-
-export const getWoDetail = async () => {
+export const getWoDetail = async (page, pageSize) => {
   try {
     const response = await axios.get(
-      'http://training.smartech-tn.com:9219/maximo/oslc/os/mxwodetail?oslc.select=*&oslc.where=status="wappr" and siteid="bedford"&_lid=maxadmin&_lpwd=maxadmin123&lean=1',
+      `http://training.smartech-tn.com:9219/maximo/oslc/os/mxwodetail?oslc.select=wonum,description,workorderid,assetnum,worktype,lead,description_longdescription,location,rel.worklog{*},rel.doclinks{*},rel.woactivity{*},status&oslc.where=status="wappr"&_lid=maxadmin&_lpwd=maxadmin123&lean=1&oslc.pageSize=${pageSize}&oslc.page=${page}`,
     );
-
-    const data = response.data.member;
-    return data;
+    const newData = response.data.member;
+    return {newData, nextPage: response.data.responseInfo.nextPage?.href};
   } catch (error) {
-    return error;
+    console.error(error);
+    return {newData: [], nextPage: null};
   }
 };

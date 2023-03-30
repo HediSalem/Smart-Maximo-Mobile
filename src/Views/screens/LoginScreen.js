@@ -24,10 +24,8 @@ const LoginScreen = () => {
     setLoading(true);
     const response = await login(username, password);
     if (response.success) {
-      const responseDetail = await getWoDetail();
       navigation.navigate('MainTabs', {
         screen: 'WorkOrder',
-        params: {responseDetail: responseDetail},
       });
     } else {
       if (
@@ -37,8 +35,8 @@ const LoginScreen = () => {
         response.error.response.data.Error &&
         response.error.response.data.Error.message
       ) {
-        setLoading(false);
         Alert.alert('Login Failed', response.error.response.data.Error.message);
+        setLoading(false);
       }
     }
     setLoading(false);

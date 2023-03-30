@@ -5,10 +5,11 @@ import Colors from '../../Styles/Colors';
 
 function Card({cardData}) {
   const scale = useSurfaceScale();
+  console.log(cardData);
   return (
     <ScrollView style={{backgroundColor: scale(0).hex()}}>
       <View style={[styles.card, {backgroundColor: scale(0).hex()}]}>
-        <Text style={styles.description}>{cardData.DESCRIPTION}</Text>
+        <Text style={styles.description}>{cardData.description}</Text>
         <Text
           style={[
             styles.text,
@@ -16,112 +17,89 @@ function Card({cardData}) {
               backgroundColor: 'lightgray',
               borderRadius: 20,
               width: '18%',
-              paddingLeft: '1.5%',
+              textAlign: 'center',
             },
           ]}>
-          <Text style={styles.innerText}>{cardData.WONUM}</Text>
+          <Text style={[styles.innerText]}>{cardData.wonum}</Text>
         </Text>
         <View style={styles.container}>
           <View style={styles.column}>
             <Text style={styles.text}>
-              Status: <Text style={styles.innerText}>{cardData.STATUS}</Text>
+              Status: <Text style={styles.innerText}>{cardData.status}</Text>
             </Text>
             <Text style={styles.text}>
-              Lead: <Text style={styles.innerText}>{cardData.LEAD}</Text>
+              Lead:{' '}
+              {typeof cardData.lead === 'undefined' ? (
+                <Text style={styles.innerText}>Not yet defined</Text>
+              ) : (
+                <Text style={styles.innerText}>{cardData.lead} </Text>
+              )}
             </Text>
-            <Text style={styles.text}>
-              Phone: <Text style={styles.innerText}>{cardData.PHONE}</Text>
-            </Text>
+
             <Text style={styles.text}>
               Asset number:{' '}
               <Text style={[styles.innerText, {color: Colors.navyBlue}]}>
-                {cardData.ASSETNUM}
+                {cardData.assetnum}
               </Text>
             </Text>
 
             <Text style={styles.text}>
-              Problem code:{' '}
-              <Text style={styles.innerText}>{cardData.PROBLEMCODE}</Text>
-            </Text>
-            <Text style={styles.text}>
-              Failure code:{' '}
-              <Text style={styles.innerText}>{cardData.FAILURECODE}</Text>
-            </Text>
-            <Text style={styles.text}>
-              Site:{' '}
+              Location:{' '}
               <Text style={[styles.innerText, {color: Colors.navyBlue}]}>
-                {cardData.SITEID}
+                {cardData.location}
               </Text>
             </Text>
             <Text style={styles.text}>
-              Work Type:{' '}
-              <Text style={styles.innerText}>{cardData.WORKTYPE}</Text>
-            </Text>
-            <Text style={styles.text}>
-              Priority:{' '}
-              <Text style={styles.innerText}>{cardData.WOPRIORITY}</Text>
-            </Text>
-
-            <Text style={styles.text}>
-              Material description:{' '}
+              Tasks:
               {cardData &&
-                cardData.WPMATERIAL &&
-                cardData.WPMATERIAL.map((item, index) => (
+                cardData.woactivity &&
+                cardData.woactivity.map((item, index) => (
                   <Text key={index} style={styles.innerText}>
-                    {item.DESCRIPTION}
+                    {'\n'}
+                    {item.description}
                   </Text>
                 ))}
             </Text>
             <Text style={styles.text}>
-              Location description:{' '}
-              <Text style={styles.innerText}>
-                {cardData.LOCATIONS[0].DESCRIPTION}
-              </Text>
+              Attachments:
+              {cardData &&
+                cardData.doclinks &&
+                cardData.doclinks.map((item, index) => (
+                  <Text key={index} style={styles.innerText}>
+                    {'\n'}
+                    {item.href}
+                  </Text>
+                ))}
             </Text>
           </View>
           <View style={styles.column}>
             <Text style={styles.text}>
-              Organization ID:{' '}
-              <Text style={styles.innerText}>{cardData.ORGID}</Text>
+              Worktype :{' '}
+              <Text style={styles.innerText}>{cardData.worktype}</Text>
             </Text>
+
             <Text style={styles.text}>
-              Account:{' '}
-              <Text style={styles.innerText}>{cardData.GLACCOUNT}</Text>
-            </Text>
-            <Text style={styles.text}>
-              Reported by:{' '}
-              <Text style={styles.innerText}>{cardData.REPORTEDBY}</Text>
-            </Text>
-            <Text style={styles.text}>
-              Reported at:{' '}
-              <Text style={styles.innerText}>{cardData.REPORTDATE}</Text>
-            </Text>
-            <Text style={styles.text}>
-              Scheduled at:{' '}
-              <Text style={styles.innerText}>{cardData.SCHEDSTART}</Text>
-            </Text>
-            <Text style={styles.text}>
-              Required Date:
+              Journal:
               {cardData &&
-                cardData.WPMATERIAL &&
-                cardData.WPMATERIAL.map((item, index) => (
+                cardData.worklog &&
+                cardData.worklog.map((item, index) => (
                   <Text key={index} style={styles.innerText}>
-                    {item.REQUIREDATE}
+                    {'\n'}
+                    {item.description}
                   </Text>
                 ))}
-            </Text>
-            <Text style={styles.text}>
-              Estimated duration:
-              <Text style={styles.innerText}>{cardData.ESTDUR}</Text>
             </Text>
           </View>
         </View>
         <Text style={styles.text}>
           Long Description: {''}
-          <Text style={styles.innerText}>
-            {cardData.DESCRIPTION} {cardData.DESCRIPTION} {cardData.DESCRIPTION}{' '}
-            {cardData.DESCRIPTION} {cardData.DESCRIPTION} {cardData.DESCRIPTION}{' '}
-          </Text>
+          {typeof cardData.description_longdescription === 'undefined' ? (
+            <Text style={styles.innerText}>Yet to be determined</Text>
+          ) : (
+            <Text style={styles.innerText}>
+              {cardData.description_longdescription}
+            </Text>
+          )}
         </Text>
       </View>
     </ScrollView>

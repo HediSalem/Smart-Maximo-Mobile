@@ -26,7 +26,7 @@ const ListItem = ({
   const scale = useSurfaceScale();
   const handlePress = () => {
     const result = allData.find(
-      element => element.WORKORDERID === item.WORKORDERID,
+      element => element.workorderid === item.workorderid,
     );
 
     navigation.navigate('Details', {data: result});
