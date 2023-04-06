@@ -87,8 +87,6 @@ function Card({cardData}) {
                 {cardData.doclinks ? cardData.doclinks.member.length : 0}
               </Text>
             </TouchableOpacity>
-          </View>
-          <View style={styles.column}>
             <Text style={styles.text}>
               <Ionic name="briefcase-outline" size={20} /> Worktype :{' '}
               <Text style={styles.innerText}>{cardData.worktype}</Text>
@@ -113,6 +111,7 @@ function Card({cardData}) {
             </TouchableOpacity>
           </View>
         </View>
+
         <Text style={styles.text}>
           <Ionic name="document-text-outline" size={20} />
           Long Description: {''}

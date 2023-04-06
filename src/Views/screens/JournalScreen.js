@@ -15,9 +15,6 @@ function JournalScreen() {
     <View style={{flex: 1}}>
       <ScrollView style={{backgroundColor: scale(0).hex(), flex: 1}}>
         <Text style={styles.title}>Journal</Text>
-        <View style={styles.chatRight}>
-          <Text style={{fontSize: 16, color: '#fff'}}>Hello !!!</Text>
-        </View>
         {Journal.map((entry, index) => (
           <View key={index} style={styles.chatLeft}>
             <Text style={{fontSize: 16, color: '#fff'}}>

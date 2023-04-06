@@ -6,10 +6,47 @@ import Colors from '../../Styles/Colors';
 function TaskScreen() {
   const scale = useSurfaceScale();
   const route = useRoute();
-  const {Task} = route.params;
+  const {Woactivity} = route.params;
+
+  if (!Woactivity) {
+    return (
+      <View style={[styles.card, {backgroundColor: scale(0).hex()}]}>
+        <Text
+          style={{
+            fontSize: 25,
+            color: Colors.navyBlue,
+            alignContent: 'center',
+            alignItems: 'center',
+            justifyContent: 'center',
+            textAlign: 'center',
+          }}>
+          No tasks available
+        </Text>
+      </View>
+    );
+  }
   return (
     <View style={[styles.card, {backgroundColor: scale(0).hex()}]}>
-      <Text> Welcome!!</Text>
+      <Text
+        style={{
+          fontSize: 25,
+          color: Colors.navyBlue,
+          alignContent: 'center',
+          alignItems: 'center',
+          justifyContent: 'center',
+          textAlign: 'center',
+        }}>
+        Tasks
+      </Text>
+      {Woactivity.map(woactivity => (
+        <View key={woactivity.workorderid}>
+          <Text style={styles.text}>Task ID : {woactivity.taskid}</Text>
+          <Text style={styles.text}>Status : {woactivity.status}</Text>
+          <Text style={styles.text}>
+            Description : {woactivity.description}
+          </Text>
+        </View>
+      ))}
     </View>
   );
 }
@@ -31,6 +68,15 @@ styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 4,
     elevation: 3,
+  },
+  text: {
+    fontSize: 15,
+    fontWeight: '400',
+    fontFamily: 'monospace',
+    color: Colors.black,
+    marginBottom: 7,
+    marginTop: 7,
+    textAlign: 'left',
   },
 });
 export default TaskScreen;
