@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from 'react';
+import React from 'react';
 import {StyleSheet, Text, View, ScrollView} from 'react-native';
 import {useSurfaceScale} from '@react-native-material/core';
 import {useRoute} from '@react-navigation/native';
@@ -6,10 +6,8 @@ import Colors from '../../Styles/Colors';
 import MessageBoxInput from '../components/MessageBoxInput';
 function JournalScreen() {
   const scale = useSurfaceScale();
-  const [messages, setMessages] = useState([]);
   const route = useRoute();
   const {Journal} = route.params;
-  console.log(Journal);
 
   return (
     <View style={{flex: 1}}>
