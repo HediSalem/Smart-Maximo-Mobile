@@ -1,11 +1,43 @@
 import React from 'react';
-import {Text, StyleSheet, View, ScrollView} from 'react-native';
+import {
+  Text,
+  StyleSheet,
+  View,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
+import {
+  faListCheck,
+  faBriefcase,
+} from '@fortawesome/free-solid-svg-icons/index';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import Ionic from 'react-native-vector-icons/Ionicons';
 import {useSurfaceScale} from '@react-native-material/core/src/hooks/use-surface-scale';
 import Colors from '../../Styles/Colors';
-
+import {useNavigation} from '@react-navigation/native';
 function Card({cardData}) {
+  const navigation = useNavigation();
+  //console.log(cardData.worklog);
+  const handlePressAttachments = () => {
+    navigation.navigate('AttachmentStack', {
+      screen: 'Attachment',
+      params: {Attachment: cardData.doclinks.member},
+    });
+  };
+  const handlePressTasks = () => {
+    navigation.navigate('TaskStack', {
+      screen: 'Task',
+      params: {Woactivity: cardData.woactivity},
+    });
+  };
+  const handlePressJournal = () => {
+    navigation.navigate('JournalStack', {
+      screen: 'Journal',
+      params: {Journal: cardData.worklog},
+    });
+  };
   const scale = useSurfaceScale();
-  console.log(cardData);
+
   return (
     <ScrollView style={{backgroundColor: scale(0).hex()}}>
       <View style={[styles.card, {backgroundColor: scale(0).hex()}]}>
@@ -25,81 +57,68 @@ function Card({cardData}) {
         <View style={styles.container}>
           <View style={styles.column}>
             <Text style={styles.text}>
+              <Ionic name="ios-checkmark-circle-outline" size={20} />
               Status: <Text style={styles.innerText}>{cardData.status}</Text>
             </Text>
             <Text style={styles.text}>
-              Lead:{' '}
-              {typeof cardData.lead === 'undefined' ? (
-                <Text style={styles.innerText}>Not yet defined</Text>
-              ) : (
-                <Text style={styles.innerText}>{cardData.lead} </Text>
-              )}
+              <Ionic name="body-outline" size={20} />
+              Lead: <Text style={styles.innerText}>{cardData.lead} </Text>
             </Text>
 
             <Text style={styles.text}>
-              Asset number:{' '}
+              <Ionic name="md-settings-outline" size={20} />
+              Asset:{' '}
               <Text style={[styles.innerText, {color: Colors.navyBlue}]}>
                 {cardData.assetnum}
               </Text>
             </Text>
 
             <Text style={styles.text}>
-              Location:{' '}
+              <Ionic name="ios-location-outline" size={20} />
+              Location:
               <Text style={[styles.innerText, {color: Colors.navyBlue}]}>
                 {cardData.location}
               </Text>
             </Text>
-            <Text style={styles.text}>
-              Tasks:
-              {cardData &&
-                cardData.woactivity &&
-                cardData.woactivity.map((item, index) => (
-                  <Text key={index} style={styles.innerText}>
-                    {'\n'}
-                    {item.description}
-                  </Text>
-                ))}
-            </Text>
-            <Text style={styles.text}>
-              Attachments:
-              {cardData &&
-                cardData.doclinks &&
-                cardData.doclinks.map((item, index) => (
-                  <Text key={index} style={styles.innerText}>
-                    {'\n'}
-                    {item.href}
-                  </Text>
-                ))}
-            </Text>
+            <TouchableOpacity onPress={handlePressAttachments}>
+              <Text style={styles.text}>
+                <Ionic name="attach" size={20} />
+                Attachments:{''}
+                {cardData.doclinks ? cardData.doclinks.member.length : 0}
+              </Text>
+            </TouchableOpacity>
           </View>
           <View style={styles.column}>
             <Text style={styles.text}>
-              Worktype :{' '}
+              <Ionic name="briefcase-outline" size={20} /> Worktype :{' '}
               <Text style={styles.innerText}>{cardData.worktype}</Text>
             </Text>
-
-            <Text style={styles.text}>
-              Journal:
-              {cardData &&
-                cardData.worklog &&
-                cardData.worklog.map((item, index) => (
-                  <Text key={index} style={styles.innerText}>
-                    {'\n'}
-                    {item.description}
-                  </Text>
-                ))}
-            </Text>
+            <TouchableOpacity onPress={handlePressTasks}>
+              <Text style={styles.text}>
+                <Ionic name="md-list-circle-outline" size={20} />
+                Tasks:
+                <Text style={styles.innerText}>
+                  {cardData.woactivity ? cardData.woactivity.length : 0}
+                </Text>
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={handlePressJournal}>
+              <Text style={styles.text}>
+                <Ionic name="journal-outline" size={20} />
+                Journal:
+                <Text style={styles.innerText}>
+                  {cardData.worklog ? cardData.worklog.length : 0}
+                </Text>
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
         <Text style={styles.text}>
+          <Ionic name="document-text-outline" size={20} />
           Long Description: {''}
-          {typeof cardData.description_longdescription === 'undefined' ? (
-            <Text style={styles.innerText}>Yet to be determined</Text>
-          ) : (
-            <Text style={styles.innerText}>
-              {cardData.description_longdescription}
-            </Text>
-          )}
+          <Text style={styles.innerText}>
+            {cardData.description_longdescription}
+          </Text>
         </Text>
       </View>
     </ScrollView>
@@ -114,7 +133,6 @@ const styles = StyleSheet.create({
   },
   card: {
     borderRadius: 5,
-
     marginBottom: 15,
     marginRight: 10,
     marginLeft: 10,
@@ -136,6 +154,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   text: {
+    fontSize: 15,
     fontWeight: '400',
     fontFamily: 'monospace',
     color: Colors.black,
@@ -145,9 +164,10 @@ const styles = StyleSheet.create({
   },
   innerText: {
     fontWeight: 'bold',
+    marginTop: 7,
   },
   description: {
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: 'bold',
     color: Colors.royalBlue,
     textAlign: 'center',

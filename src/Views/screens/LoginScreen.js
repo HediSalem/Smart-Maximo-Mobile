@@ -10,7 +10,7 @@ import {
 import {Button} from '@react-native-material/core';
 import {useSurfaceScale} from '@react-native-material/core/src/hooks/use-surface-scale';
 import Colors from '../../Styles/Colors';
-import {login, getWoDetail} from '../../api/DataApis';
+import {login} from '../../api/DataApis';
 import {useNavigation} from '@react-navigation/native';
 
 const LoginScreen = () => {
@@ -37,6 +37,9 @@ const LoginScreen = () => {
       ) {
         Alert.alert('Login Failed', response.error.response.data.Error.message);
         setLoading(false);
+      } else {
+        setLoading(false);
+        Alert.alert('Login Failed! Try again');
       }
     }
     setLoading(false);

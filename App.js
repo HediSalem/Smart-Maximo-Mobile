@@ -1,12 +1,13 @@
-import React, {useState} from 'react';
-import {View} from 'react-native';
+import React from 'react';
+
 import NavigationTab from './src/routes/NavigationTab';
+import {NavigationContainer} from '@react-navigation/native';
 
 function App() {
   return (
-    <View style={{flex: 1}}>
+    <NavigationContainer>
       <NavigationTab />
-    </View>
+    </NavigationContainer>
   );
 }
 

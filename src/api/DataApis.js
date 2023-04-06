@@ -1,6 +1,5 @@
 import axios from 'axios';
 import {encode} from 'base-64';
-
 export const login = async (username, password) => {
   const credentials = `${username}:${password}`;
   const encodedCredentials = encode(credentials);
@@ -25,13 +24,14 @@ export const login = async (username, password) => {
       return {success: true, data: response.data};
     }
   } catch (error) {
+    console.log(error);
     return {success: false, error: error};
   }
 };
 export const getWoDetail = async (page, pageSize) => {
   try {
     const response = await axios.get(
-      `http://training.smartech-tn.com:9219/maximo/oslc/os/mxwodetail?oslc.select=wonum,description,workorderid,assetnum,worktype,lead,description_longdescription,location,rel.worklog{*},rel.doclinks{*},rel.woactivity{*},status&oslc.where=status="wappr"&_lid=maxadmin&_lpwd=maxadmin123&lean=1&oslc.pageSize=${pageSize}&oslc.page=${page}`,
+      `http://training.smartech-tn.com:9219/maximo/oslc/os/SMWORKORDER?oslc.select=wonum,description,workorderid,assetnum,worktype,lead,description_longdescription,location,rel.worklog{*},doclinks{*},rel.woactivity{*},status&oslc.where=status="wappr"&_lid=maxadmin&_lpwd=maxadmin123&lean=1&oslc.pageSize=${pageSize}&oslc.page=${page}`,
     );
     const newData = response.data.member;
     return {newData, nextPage: response.data.responseInfo.nextPage?.href};

@@ -1,14 +1,46 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import NavigationContainer from '@react-navigation/native/src/NavigationContainer';
 import Ionic from 'react-native-vector-icons/Ionicons';
 import WorkOrderDetailScreen from '../Views/screens/WorkOrder/WorkOrderDetailScreen';
 import WorkOrderListScreen from '../Views/screens/WorkOrder/WorkOrderListScreen';
 import {createStackNavigator} from '@react-navigation/stack';
 import LoginScreen from '../Views/screens/LoginScreen';
+import AttachmentScreen from '../Views/screens/AttachmentScreen';
+import TaskScreen from '../Views/screens/TaskScreen';
+import JournalScreen from '../Views/screens/JournalScreen';
+import {useNavigation} from '@react-navigation/native';
 function NavigationTab() {
   const Stack = createStackNavigator();
   const Tab = createBottomTabNavigator();
+  const navigation = useNavigation();
+  const AttachmentStack = () => (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Attachment"
+        component={AttachmentScreen}
+        options={{headerShown: false}}
+      />
+    </Stack.Navigator>
+  );
+  const JournalStack = () => (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Journal"
+        component={JournalScreen}
+        options={{headerShown: false}}
+      />
+    </Stack.Navigator>
+  );
+  const TaskStack = () => (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Task"
+        component={TaskScreen}
+        options={{headerShown: false}}
+      />
+    </Stack.Navigator>
+  );
+
   const AuthStack = () => (
     <Stack.Navigator>
       <Stack.Screen
@@ -47,20 +79,33 @@ function NavigationTab() {
   };
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator options={{headerShown: false}}>
-        <Stack.Screen
-          name="AuthStack"
-          component={AuthStack}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="MainTabs"
-          component={MainTabs}
-          options={{headerShown: false}}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Stack.Navigator options={{headerShown: false}}>
+      <Stack.Screen
+        name="AuthStack"
+        component={AuthStack}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="MainTabs"
+        component={MainTabs}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="AttachmentStack"
+        component={AttachmentStack}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="TaskStack"
+        component={TaskStack}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="JournalStack"
+        component={JournalStack}
+        options={{headerShown: false}}
+      />
+    </Stack.Navigator>
   );
 }
 
