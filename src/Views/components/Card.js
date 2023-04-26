@@ -6,11 +6,7 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-import {
-  faListCheck,
-  faBriefcase,
-} from '@fortawesome/free-solid-svg-icons/index';
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+
 import Ionic from 'react-native-vector-icons/Ionicons';
 import {useSurfaceScale} from '@react-native-material/core/src/hooks/use-surface-scale';
 import Colors from '../../Styles/Colors';

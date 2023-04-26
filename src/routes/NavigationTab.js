@@ -9,6 +9,8 @@ import AttachmentScreen from '../Views/screens/AttachmentScreen';
 import TaskScreen from '../Views/screens/TaskScreen';
 import JournalScreen from '../Views/screens/JournalScreen';
 import {useNavigation} from '@react-navigation/native';
+import CallScreen from '../Views/screens/VideoAssistance/CallScreen';
+
 function NavigationTab() {
   const Stack = createStackNavigator();
   const Tab = createBottomTabNavigator();
@@ -60,6 +62,8 @@ function NavigationTab() {
               iconName = focused ? 'ios-home' : 'ios-home-outline';
             } else if (route.name === 'Details') {
               iconName = focused ? 'ios-list-sharp' : 'ios-list-outline';
+            } else if (route.name === 'Call') {
+              iconName = focused ? 'ios-videocam' : 'ios-videocam-outline';
             }
             return <Ionic name={iconName} size={size} color={colour} />;
           },
@@ -73,6 +77,11 @@ function NavigationTab() {
           name="Details"
           options={{headerShown: false}}
           component={WorkOrderDetailScreen}
+        />
+        <Tab.Screen
+          name="Call"
+          options={{headerShown: false}}
+          component={CallScreen}
         />
       </Tab.Navigator>
     );

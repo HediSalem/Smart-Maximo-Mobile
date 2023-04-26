@@ -6,4 +6,6 @@ export default {
   navyBlue: '#000080',
   lightGray: 'lightgray',
   mystic: '#d9dbda',
+  green: '#008000',
+  red: '#ff0000',
 };
