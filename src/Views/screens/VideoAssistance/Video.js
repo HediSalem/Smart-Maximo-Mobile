@@ -8,6 +8,7 @@ import {
   faPhone,
   faCameraRotate,
   faVolumeUp,
+  faVolumeMute,
 } from '@fortawesome/free-solid-svg-icons/index';
 
 function HangupButton({hangup}) {
@@ -37,13 +38,13 @@ function CameraButton({switchCamera}) {
     </View>
   );
 }
-function VolumeButton({switchAudio}) {
+function VolumeButton({switchAudio, isMuted}) {
   return (
     <View style={styles.CameraSwitch}>
       <TouchableOpacity onPress={switchAudio}>
         <FontAwesomeIcon
           size={25}
-          icon={faVolumeUp}
+          icon={isMuted ? faVolumeMute : faVolumeUp}
           style={{color: Colors.white, alignItems: 'center'}}
         />
       </TouchableOpacity>
@@ -51,7 +52,14 @@ function VolumeButton({switchAudio}) {
   );
 }
 
-function Video({localStream, remoteStream, hangup, switchCamera, switchAudio}) {
+function Video({
+  localStream,
+  remoteStream,
+  hangup,
+  switchCamera,
+  switchAudio,
+  isMuted,
+}) {
   // on Call we display the localStream
 
   if (localStream && !remoteStream) {
@@ -84,7 +92,7 @@ function Video({localStream, remoteStream, hangup, switchCamera, switchAudio}) {
         <View style={styles.bt}>
           <HangupButton hangup={hangup} />
           <CameraButton switchCamera={switchCamera} />
-          <VolumeButton switchAudio={switchAudio} />
+          <VolumeButton switchAudio={switchAudio} isMuted={isMuted} />
         </View>
       </View>
     );

@@ -87,6 +87,7 @@ export default function CallScreen() {
       track.enabled = !isMuted;
     });
     setIsMuted(!isMuted);
+    console.log('ismuted', isMuted);
     console.log('localStream.audio()', localStream.getAudioTracks());
   };
 
@@ -229,6 +230,7 @@ export default function CallScreen() {
   if (localStream) {
     return (
       <Video
+        isMuted={isMuted}
         switchAudio={switchAudio}
         switchCamera={switchCamera}
         hangup={hangup}
