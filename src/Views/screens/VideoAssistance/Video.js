@@ -5,20 +5,20 @@ import {RTCView} from 'react-native-webrtc';
 import Colors from '../../../Styles/Colors';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {
-  faPhone,
   faCameraRotate,
-  faVolumeUp,
-  faVolumeMute,
+  faMicrophone,
+  faMicrophoneSlash,
 } from '@fortawesome/free-solid-svg-icons/index';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 function HangupButton({hangup}) {
   return (
     <View style={styles.btContainer}>
       <TouchableOpacity onPress={hangup}>
-        <FontAwesomeIcon
-          icon={faPhone}
+        <Icon
+          name="phone-hangup"
+          size={30}
           style={{color: Colors.white, alignItems: 'center'}}
-          rotation={180}
         />
       </TouchableOpacity>
     </View>
@@ -44,7 +44,7 @@ function VolumeButton({switchAudio, isMuted}) {
       <TouchableOpacity onPress={switchAudio}>
         <FontAwesomeIcon
           size={25}
-          icon={isMuted ? faVolumeMute : faVolumeUp}
+          icon={isMuted ? faMicrophone : faMicrophoneSlash}
           style={{color: Colors.white, alignItems: 'center'}}
         />
       </TouchableOpacity>

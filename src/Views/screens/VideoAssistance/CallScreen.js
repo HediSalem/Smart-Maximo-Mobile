@@ -2,6 +2,11 @@ import React, {useState, useRef, useEffect} from 'react';
 import {Text, StyleSheet, Button, View} from 'react-native';
 import GettingCall from './GettingCall';
 import Video from './Video';
+import Colors from '../../../Styles/Colors';
+
+//import Sound from 'react-native-sound';
+import {useSurfaceScale} from '@react-native-material/core/src/hooks/use-surface-scale';
+
 import {
   MediaStream,
   RTCIceCandidate,
@@ -16,22 +21,32 @@ import firestore from '@react-native-firebase/firestore';
 const configuration = {iceServers: [{url: 'stun:stun.l.google.com:19302'}]};
 
 export default function CallScreen() {
+  const scale = useSurfaceScale();
   const [localStream, setLocalStream] = useState();
   const [remoteStream, setRemoteStream] = useState();
-  const [gettingCall, setGettingCall] = useState();
-  const [facingMode, setFacingMode] = useState('user');
+  const [gettingCall, setGettingCall] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
-
+  const [data, setData] = useState([]);
   const pc = useRef();
 
   const connecting = useRef(false);
+  // useEffect(() => {
+  //   Ringtone();
+  // }, [gettingCall]);
+
+  const initializeUsers = async () => {
+    await deleteAllUsers();
+    await addUsers();
+    displayUser();
+  };
 
   useEffect(() => {
     const cRef = firestore().collection('meet').doc('chatId');
+    initializeUsers();
+    console.log('data in database', data);
 
     const subscribe = cRef.onSnapshot(snapshot => {
       const data = snapshot.data();
-
       // on answer start call
       if (pc.current && !pc.current.remoteDescription && data && data.answer) {
         pc.current.setRemoteDescription(new RTCSessionDescription(data.answer));
@@ -41,12 +56,18 @@ export default function CallScreen() {
       if (data && data.offer && !connecting.current) {
         setGettingCall(true);
       }
+      //if one of the users hangs up without entering the call, the calls is terminated
+      if (!data) {
+        hangup();
+      }
     });
     // On delete of collection call hangup
+
     // The other side has clicked on hangup
     const subscribeDelete = cRef.collection('callee').onSnapshot(snapshot => {
       snapshot.docChanges().forEach(change => {
         if (change.type == 'removed') {
+          console.log('hangup normalement', change.type);
           hangup();
         }
       });
@@ -56,27 +77,52 @@ export default function CallScreen() {
       subscribeDelete();
     };
   }, []);
+  const addUsers = async () => {
+    const peopleRef = firestore().collection('people');
+    const users = [
+      {name: 'snow', surname: 'john'},
+      {name: 'Hedi', surname: 'salem'},
+    ];
 
-  const setupWebrtc = async () => {
-    //console.log(' origin current: ', pc.current);
-    pc.current = new RTCPeerConnection(configuration);
-    // Get the audio and video stream for the call
-    const stream = await getStream();
-    if (stream) {
-      setLocalStream(stream);
-      // pc.current.addStream(stream);
-      stream.getTracks().forEach(track => {
-        pc.current.addTrack(track, stream);
-      });
+    for (let i = 0; i < users.length; i++) {
+      const newDocRef = peopleRef.doc();
+      await newDocRef.set(users[i]);
     }
-
-    // Get the remote stream once it is available
-    pc.current.ontrack = event => {
-      console.log('event.stream', event.streams);
-      //console.log('onaddstream', pc.current);
-      setRemoteStream(event.streams[0]);
-    };
   };
+  const displayUser = () => {
+    const peopleRef = firestore().collection('people');
+    peopleRef.get().then(querySnapshot => {
+      const data = querySnapshot.docs.map(doc => doc.data());
+      setData(data);
+    });
+  };
+  const deleteAllUsers = async () => {
+    const peopleRef = firestore().collection('people');
+    const querySnapshot = await peopleRef.get();
+    querySnapshot.forEach(async doc => {
+      await doc.ref.delete();
+    });
+  };
+
+  // const Ringtone = () => {
+  //   if (gettingCall) {
+  //     audioFile.play();
+  //     console.log('-------play');
+  //   } else {
+  //     audioFile.stop();
+  //     console.log('-------stop');
+  //   }
+  // };
+
+  //******** */
+  // const audioFile = new Sound(
+  //   require('../../../assets/incoming_Call.wav'),
+  //   error => {
+  //     if (error) {
+  //       console.log('Failed to load the sound file', error);
+  //     }
+  //   },
+  // );
 
   const switchCamera = () => {
     localStream.getVideoTracks().forEach(track => track._switchCamera());
@@ -90,9 +136,26 @@ export default function CallScreen() {
     console.log('ismuted', isMuted);
     console.log('localStream.audio()', localStream.getAudioTracks());
   };
-
+  const setupWebrtc = async () => {
+    //console.log(' origin current: ', pc.current);
+    pc.current = new RTCPeerConnection(configuration);
+    // Get the audio and video stream for the call
+    const stream = await getStream();
+    if (stream) {
+      setLocalStream(stream);
+      // pc.current.addStream(stream);
+      stream.getTracks().forEach(track => {
+        pc.current.addTrack(track, stream);
+      });
+    }
+    // Get the remote stream once it is available
+    pc.current.ontrack = event => {
+      console.log('event.stream', event.streams);
+      //console.log('onaddstream', pc.current);
+      setRemoteStream(event.streams[0]);
+    };
+  };
   const create = async () => {
-    console.log('calling');
     connecting.current = true;
 
     // setup webrtc
@@ -109,6 +172,7 @@ export default function CallScreen() {
       // Store the offer under the document
       const offer = await pc.current.createOffer();
       // console.log('offer', offer);
+
       pc.current.setLocalDescription(offer);
       const cWithOffer = {
         offer: {
@@ -117,6 +181,7 @@ export default function CallScreen() {
         },
       };
       cRef.set(cWithOffer);
+
       console.log('cRef setted ');
     }
   };
@@ -177,6 +242,7 @@ export default function CallScreen() {
     setLocalStream(null);
     setRemoteStream(null);
   };
+
   const firestoreCleanUp = async () => {
     const cRef = firestore().collection('meet').doc('chatId');
 
@@ -193,17 +259,13 @@ export default function CallScreen() {
     }
   };
   const collectIceCandidates = async (cRef, localName, remoteName) => {
-    console.log('collect');
     const candidteCollection = cRef.collection(localName);
     //console.log('candidteCollection', candidteCollection);
     if (pc.current) {
       // on new ICE candidate add it to firestore
       pc.current.onicecandidate = event => {
-        console.log('event.candidate', event.candidate);
-
         if (event.candidate) {
           candidteCollection.add(event.candidate);
-          console.log('candidteCollection eveny', event.candidate);
         }
       };
     }
@@ -213,7 +275,8 @@ export default function CallScreen() {
       snapshot.docChanges().forEach(change => {
         if (change.type == 'added') {
           const candidate = new RTCIceCandidate(change.doc.data());
-          console.log('candidattttttttt', candidate);
+          const ipAddress = candidate.candidate.split(' ')[4];
+          console.log('ipAddress ipAddress', ipAddress);
           pc.current.addIceCandidate(candidate);
         }
       });
@@ -222,7 +285,6 @@ export default function CallScreen() {
 
   //Displays the gettingCall component
   if (gettingCall) {
-    console.log('gettincall');
     return <GettingCall hangup={hangup} join={join} />;
   }
   //Displays local stream on calling
@@ -241,15 +303,35 @@ export default function CallScreen() {
   }
   //Displays the Call button
   return (
-    <View style={styles.container}>
-      <TouchableOpacity onPress={create}>
-        <FontAwesomeIcon icon={faVideo} flip="horizontal" size={30} />
-      </TouchableOpacity>
+    <View style={[styles.container, {backgroundColor: scale(0).hex()}]}>
+      <View style={styles.btContainer}>
+        <TouchableOpacity onPress={create}>
+          <FontAwesomeIcon icon={faVideo} flip="horizontal" size={30} />
+        </TouchableOpacity>
+      </View>
+      <View>
+        {data.map((user, index) => (
+          <View key={index}>
+            <Text style={{fontSize: 25}}>{user.name}</Text>
+          </View>
+        ))}
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  btContainer: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: Colors.lightGray,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    bottom: 30,
+    marginRight: 15,
+  },
   container: {
     flex: 1,
     alignItems: 'center',
