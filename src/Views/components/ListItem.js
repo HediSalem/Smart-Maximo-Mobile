@@ -148,7 +148,16 @@ const ListItem = ({
           )}
           <Stack fill direction="row" style={{marginTop: '2%'}} spacing={6}>
             <Button title="Assist" color={Colors.navyBlue} />
-            <Button title="Expert" color={Colors.navyBlue} variant="outlined" />
+            <Button
+              title="Expert"
+              color={Colors.navyBlue}
+              variant="outlined"
+              onPress={() =>
+                navigation.navigate('MainTabs', {
+                  screen: 'WorkOrder',
+                })
+              }
+            />
           </Stack>
         </View>
         {trailing && (

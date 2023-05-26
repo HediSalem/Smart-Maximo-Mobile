@@ -7,12 +7,14 @@ import {
   Alert,
   ActivityIndicator,
 } from 'react-native';
+import firestore from '@react-native-firebase/firestore';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Button} from '@react-native-material/core';
 import {useSurfaceScale} from '@react-native-material/core/src/hooks/use-surface-scale';
 import Colors from '../../Styles/Colors';
 import {login} from '../../api/DataApis';
 import {useNavigation} from '@react-navigation/native';
-
+import {setExpiringKey} from '../../utils/AsyncKeyFunctions';
 const LoginScreen = () => {
   const scale = useSurfaceScale();
   const navigation = useNavigation();
@@ -24,9 +26,12 @@ const LoginScreen = () => {
     setLoading(true);
     const response = await login(username, password);
     if (response.success) {
-      navigation.navigate('MainTabs', {
-        screen: 'WorkOrder',
-      });
+      inputInFirebase();
+      await storeData(username).then(
+        navigation.navigate('MainTabs', {
+          screen: 'WorkOrder',
+        }),
+      );
     } else {
       if (
         response.error &&
@@ -51,6 +56,22 @@ const LoginScreen = () => {
       </View>
     );
   }
+  const inputInFirebase = () => {
+    if (username.trim().length) {
+      console.log('d5alna bel key');
+      const signalingRef = firestore().collection('meet').doc(username);
+
+      console.log('d5alna el signaling');
+      signalingRef.set({}, {merge: true});
+
+      console.log('Signaling information saved to the database!');
+    }
+  };
+  const storeData = async value => {
+    console.log('StoreData value', value);
+    //setExpiringKey('myKey', value, 30);
+    AsyncStorage.setItem('myKey', value);
+  };
   return (
     <View style={[styles.container, {backgroundColor: scale(0).hex()}]}>
       <Text style={styles.title}>Login</Text>

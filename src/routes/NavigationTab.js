@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useRef} from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Ionic from 'react-native-vector-icons/Ionicons';
 import WorkOrderDetailScreen from '../Views/screens/WorkOrder/WorkOrderDetailScreen';
@@ -9,12 +9,25 @@ import AttachmentScreen from '../Views/screens/AttachmentScreen';
 import TaskScreen from '../Views/screens/TaskScreen';
 import JournalScreen from '../Views/screens/JournalScreen';
 import {useNavigation} from '@react-navigation/native';
-import CallScreen from '../Views/screens/VideoAssistance/CallScreen';
-
+import InitiateCallScreen from '../Views/screens/VideoAssistance/InitiateCallScreen';
+import {getData} from '../utils/VideoCallFunctions';
 function NavigationTab() {
   const Stack = createStackNavigator();
   const Tab = createBottomTabNavigator();
   const navigation = useNavigation();
+
+  useEffect(() => {
+    getData().then(value => {
+      if (value !== null) {
+        // Key exists, navigate to MainTabs
+        navigation.navigate('MainTabs');
+      } else {
+        // Key doesn't exist, navigate to AuthStack
+        navigation.navigate('AuthStack');
+      }
+    });
+  }, []);
+
   const AttachmentStack = () => (
     <Stack.Navigator>
       <Stack.Screen
@@ -81,7 +94,7 @@ function NavigationTab() {
         <Tab.Screen
           name="Call"
           options={{headerShown: false}}
-          component={CallScreen}
+          component={InitiateCallScreen}
         />
       </Tab.Navigator>
     );

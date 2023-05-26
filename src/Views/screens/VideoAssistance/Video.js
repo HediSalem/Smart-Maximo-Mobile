@@ -1,6 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {RTCView} from 'react-native-webrtc';
 import Colors from '../../../Styles/Colors';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
