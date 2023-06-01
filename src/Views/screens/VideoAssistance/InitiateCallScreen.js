@@ -1,5 +1,12 @@
 import React, {useState, useRef, useEffect} from 'react';
-import {Text, StyleSheet, View, TouchableOpacity, Alert} from 'react-native';
+import {
+  Text,
+  StyleSheet,
+  View,
+  TouchableOpacity,
+  Alert,
+  ScrollView,
+} from 'react-native';
 import Video from './Video';
 import Colors from '../../../Styles/Colors';
 import {useSurfaceScale} from '@react-native-material/core/src/hooks/use-surface-scale';
@@ -13,6 +20,7 @@ import {
   switchCamera,
   fetchDocumentNames,
   setupWebrtc,
+  getStream,
 } from '../../../utils/VideoCallFunctions';
 import firestore from '@react-native-firebase/firestore';
 import {
@@ -20,41 +28,48 @@ import {
   RTCIceCandidate,
   RTCPeerConnection,
 } from 'react-native-webrtc';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {faUser, faPhone} from '@fortawesome/free-solid-svg-icons/index';
+
+const getRandomColor = () => {
+  const colorNames = Object.keys(Colors);
+  const randomColorName =
+    colorNames[Math.floor(Math.random() * colorNames.length)];
+  return Colors[randomColorName];
+};
+const configuration = {
+  iceServers: [
+    {
+      urls: 'stun:stun.l.google.com:19302',
+    },
+    {
+      urls: 'stun:stun1.l.google.com:19302',
+    },
+    {
+      urls: 'stun:stun2.l.google.com:19302',
+    },
+  ],
+};
 export default function InitiateCallScreen() {
-  const configuration = {
-    iceServers: [
-      {
-        urls: 'stun:stun.l.google.com:19302',
-      },
-      {
-        urls: 'stun:stun1.l.google.com:19302',
-      },
-      {
-        urls: 'stun:stun2.l.google.com:19302',
-      },
-    ],
-  };
   const scale = useSurfaceScale();
   const [localStream, setLocalStream] = useState();
   const [remoteStream, setRemoteStream] = useState();
   const [documentNames, setDocumentNames] = useState([]);
-  const [showAcceptCall, setShowAcceptCall] = useState(false);
 
   const [gettingCall, setGettingCall] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const pc = useRef();
-  const [peerKey, setPeerKey] = useState(undefined);
+  const [peerKey, setPeerKey] = useState();
   const [myKey, setMyKey] = useState('');
   const [initiateCall, setInitiateCall] = useState(false);
   const connecting = useRef(false);
-
   useEffect(() => {
     getData().then(value => {
       if (value !== null) {
         setMyKey(value);
+        fetchDocumentNames(value, setDocumentNames);
       }
     });
-    fetchDocumentNames({myKey, setDocumentNames});
 
     const cRef = firestore().collection('meet').doc(peerKey);
     const subscribe = cRef.onSnapshot(snapshot => {
@@ -103,58 +118,69 @@ export default function InitiateCallScreen() {
       }
     };
   }, [initiateCall]);
+  const setupWebrtc = async () => {
+    //console.log(' origin current: ', pc.current);
+    pc.current = new RTCPeerConnection(configuration);
+    // Get the audio and video stream for the call
+    const stream = await getStream();
+    if (stream) {
+      setLocalStream(stream);
+      // pc.current.addStream(stream);
+      stream.getTracks().forEach(track => {
+        pc.current.addTrack(track, stream);
+      });
+    }
 
-  useEffect(() => {}, [peerKey]);
+    // Get the remote stream once it is available
+    pc.current.ontrack = event => {
+      console.log('event.stream', event.streams);
+      //console.log('onaddstream', pc.current);
+      setRemoteStream(event.streams[0]);
+      console.log('event.streams[0]', event.streams[0], myKey);
+      if (remoteStream) {
+        console.log('ggggggggg', remoteStream.toURL());
+      }
+    };
+  };
 
   const handleButtonClick = async name => {
     setPeerKey(name);
-    create(peerKey);
+    create(name);
   };
 
   const create = async peerKey => {
-    if (peerKey) {
-      connecting.current = true;
-      setInitiateCall(true);
-      // setup webrtc
+    connecting.current = true;
 
-      await setupWebrtc({
-        pc,
-        configuration,
-        setLocalStream,
-        setRemoteStream,
-      });
+    // setup webrtc
 
-      // Document for the call
-      const cRef = firestore().collection('meet').doc(peerKey);
-      // Handle the case when peerKey is not available
+    await setupWebrtc();
+    setInitiateCall(true);
+    // Document for the call
+    const cRef = firestore().collection('meet').doc(peerKey);
+    // Handle the case when peerKey is not available
 
-      // Exchange the ICE candidates between the caller and callee
-      collectIceCandidates({pc, cRef}, myKey);
-      console.log('pc current gbal offer', pc.current);
+    // Exchange the ICE candidates between the caller and callee
+    collectIceCandidates({pc, cRef}, myKey);
+    console.log('pc current gbal offer', pc.current);
 
-      if (pc.current) {
-        // Create the offer for the call
-        // Store the offer under the document
-        const offer = await pc.current.createOffer();
-        console.log('offer in create', offer);
+    if (pc.current) {
+      // Create the offer for the call
+      // Store the offer under the document
+      const offer = await pc.current.createOffer();
+      console.log('offer in create', offer);
 
-        pc.current.setLocalDescription(offer);
-        console.log('setLocalDescription in create', pc.current);
+      pc.current.setLocalDescription(offer);
+      console.log('setLocalDescription in create', pc.current);
 
-        const cWithOffer = {
-          offer: {
-            type: offer.type,
-            sdp: offer.sdp,
-          },
-        };
-        cRef.set(cWithOffer);
+      const cWithOffer = {
+        offer: {
+          type: offer.type,
+          sdp: offer.sdp,
+        },
+      };
+      cRef.set(cWithOffer);
 
-        console.log('cRef setted ');
-        setShowAcceptCall(true);
-      }
-    } else {
-      Alert.alert('Try again');
-      return;
+      console.log('cRef setted ');
     }
   };
 
@@ -172,6 +198,7 @@ export default function InitiateCallScreen() {
   //Displays local stream on calling
   //Displays both local and remote stream once call is connected
   if (localStream) {
+    console.log('hhhhhhhh', remoteStream);
     return (
       <Video
         isMuted={isMuted}
@@ -185,26 +212,107 @@ export default function InitiateCallScreen() {
   }
   //Displays the Call button
   return (
-    <View style={[styles.container, {backgroundColor: scale(0).hex()}]}>
+    <ScrollView style={[styles.container, {backgroundColor: scale(0).hex()}]}>
       <View>
-        {documentNames.map(name => (
-          <View key={name} style={{flexDirection: 'row', alignItems: 'center'}}>
-            <Text style={{marginRight: 8}}>{name}</Text>
-            <Button
-              title="Call"
-              color={Colors.navyBlue}
-              onPress={() => handleButtonClick(name)}
-            />
-          </View>
-        ))}
+        <Text style={styles.tableHeader}>Connected users</Text>
+        <View style={styles.rowContainer}>
+          {documentNames.map(name => (
+            <View key={name} style={styles.card}>
+              <View style={styles.cardContent}>
+                <FontAwesomeIcon
+                  icon={faUser}
+                  style={[styles.cardIcon, {color: getRandomColor()}]}
+                  size={120}
+                />
+                <Text style={styles.cardText}>{name}</Text>
+              </View>
+              <View style={styles.buttonContainer}>
+                <View style={styles.stretchedButton}>
+                  <Button
+                    title="Call"
+                    color={Colors.green}
+                    onPress={() => handleButtonClick(name)}
+                    leading={
+                      <FontAwesomeIcon
+                        icon={faPhone}
+                        style={{color: Colors.mystic}}
+                      />
+                    }
+                  />
+                </View>
+              </View>
+            </View>
+          ))}
+        </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    // alignItems: 'flex-start',
+    //justifyContent: 'flex-start',
+  },
+  buttonContainer: {
+    flex: 1,
+    marginTop: 10,
+    width: '100%',
+    alignItems: 'center',
+  },
+  stretchedButton: {
+    width: '100%',
+  },
+  buttonTitle: {
+    flex: 1,
+    textAlign: 'center',
+    // Add other button title styles as needed
+  },
+  tableHeader: {
+    //flex: 1,
+    padding: 10,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    fontSize: 25,
+  },
+  rowContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+  },
+  card: {
+    width: '48%',
+    borderRadius: 5,
+    marginBottom: 15,
+    padding: 20,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#ffffff',
+    shadowColor: Colors.royalBlue,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  cardContent: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 10,
+  },
+  cardIcon: {
+    color: getRandomColor(),
+    alignSelf: 'center',
+  },
+  cardText: {
+    marginTop: 10,
+    textAlign: 'center',
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: Colors.black,
+    marginBottom: -5,
   },
 });
