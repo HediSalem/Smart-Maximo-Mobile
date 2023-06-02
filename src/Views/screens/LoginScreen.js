@@ -25,7 +25,10 @@ const LoginScreen = () => {
   const handlePress = async () => {
     setLoading(true);
     const response = await login(username, password);
-    if (response.success) {
+    if (
+      true
+      //response.success
+    ) {
       inputInFirebase();
       await storeData(username).then(
         navigation.navigate('MainTabs', {
@@ -40,7 +43,10 @@ const LoginScreen = () => {
         response.error.response.data.Error &&
         response.error.response.data.Error.message
       ) {
-        Alert.alert('Login Failed', response.error.response.data.Error.message);
+        Alert.alert(
+          'Network connexion error! Please Try Again',
+          response.error.response.data.Error.message,
+        );
         setLoading(false);
       } else {
         setLoading(false);
@@ -59,7 +65,7 @@ const LoginScreen = () => {
   const inputInFirebase = () => {
     if (username.trim().length) {
       console.log('d5alna bel key');
-      const signalingRef = firestore().collection('meet').doc(username);
+      const signalingRef = firestore().collection('users').doc(username);
 
       console.log('d5alna el signaling');
       signalingRef.set({}, {merge: true});

@@ -11,6 +11,10 @@ import JournalScreen from '../Views/screens/JournalScreen';
 import {useNavigation} from '@react-navigation/native';
 import InitiateCallScreen from '../Views/screens/VideoAssistance/InitiateCallScreen';
 import {getData} from '../utils/VideoCallFunctions';
+import Cscreen from '../Views/screens/VideoAssistance/CScreen';
+import CallingScreen from '../Views/screens/VideoAssistance/CallingScreen';
+import CallScreen from '../Views/screens/VideoAssistance/CallScreen';
+import StartCall from '../../StartCall';
 function NavigationTab() {
   const Stack = createStackNavigator();
   const Tab = createBottomTabNavigator();

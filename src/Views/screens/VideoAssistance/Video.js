@@ -8,6 +8,7 @@ import {
   faMicrophone,
   faMicrophoneSlash,
 } from '@fortawesome/free-solid-svg-icons/index';
+import {getUniqueId, getManufacturer} from 'react-native-device-info';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 function HangupButton({hangup}) {
@@ -60,7 +61,7 @@ function Video({
   isMuted,
 }) {
   // on Call we display the localStream
-
+  //console.log('yamma het remote', remoteStream.toURL());
   if (localStream && !remoteStream) {
     return (
       <View style={styles.container}>
@@ -73,20 +74,25 @@ function Video({
       </View>
     );
   }
-
+  console.log('remotestream in video', remoteStream);
+  console.log('localstream in video', localStream);
   // Once the call is connected we display localStream on Top of remoteStream
-  if (localStream && remoteStream) {
+  if (localStream && remoteStream != undefined && remoteStream != null) {
+    //console.log('remote stream', remoteStream);
+
     return (
       <View style={styles.container}>
         <RTCView
           streamURL={remoteStream.toURL()}
           objectFit={'cover'}
           style={styles.video}
+          mirror={true}
         />
         <RTCView
           streamURL={localStream.toURL()}
           objectFit={'cover'}
           style={styles.videoLocal}
+          mirror={true}
         />
         <View style={styles.bt}>
           <HangupButton hangup={hangup} />

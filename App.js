@@ -6,14 +6,18 @@ import Video from './src/Views/screens/VideoAssistance/Video';
 import firestore from '@react-native-firebase/firestore';
 import {
   getData,
-  collectIceCandidates,
+  //collectIceCandidates,
   streamCleanUp,
   switchAudio,
   switchCamera,
   firestoreCleanUp,
-  setupWebrtc,
+  getStream,
 } from './src/utils/VideoCallFunctions';
-import {RTCSessionDescription} from 'react-native-webrtc';
+import {
+  RTCSessionDescription,
+  RTCPeerConnection,
+  RTCIceCandidate,
+} from 'react-native-webrtc';
 const App = () => {
   const configuration = {
     iceServers: [
@@ -38,16 +42,6 @@ const App = () => {
   const connecting = useRef(false);
   const [randomValue, setRandomValue] = useState('');
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     const random = Math.random();
-  //     setRandomValue(random);
-  //   }, 9000);
-
-  //   return () => {
-  //     clearInterval(interval);
-  //   };
-  // }, []);
   useEffect(() => {
     getData().then(value => {
       if (value !== null) {
@@ -90,21 +84,70 @@ const App = () => {
         subscribeDelete();
       }
     };
-  });
+  }, []);
+  const collectIceCandidates = async (cRef, localName, remoteName) => {
+    console.log('collect');
+    const candidteCollection = cRef.collection(localName);
+    //console.log('candidteCollection', candidteCollection);
+    if (pc.current) {
+      // on new ICE candidate add it to firestore
+      pc.current.onicecandidate = event => {
+        console.log('event.candidate', event.candidate);
 
+        if (event.candidate) {
+          candidteCollection.add(event.candidate);
+          console.log('candidteCollection eveny', event.candidate);
+        }
+      };
+    }
+
+    // Get the ICE candidate added to firestore and update the local pc
+    cRef.collection(remoteName).onSnapshot(snapshot => {
+      snapshot.docChanges().forEach(change => {
+        if (change.type == 'added') {
+          const candidate = new RTCIceCandidate(change.doc.data());
+          console.log('candidattttttttt', candidate);
+          pc.current.addIceCandidate(candidate);
+        }
+      });
+    });
+  };
+  const setupWebrtc = async () => {
+    //console.log(' origin current: ', pc.current);
+    pc.current = new RTCPeerConnection(configuration);
+    // Get the audio and video stream for the call
+    const stream = await getStream();
+    if (stream) {
+      setLocalStream(stream);
+      // pc.current.addStream(stream);
+      stream.getTracks().forEach(track => {
+        pc.current.addTrack(track, stream);
+      });
+    }
+
+    // Get the remote stream once it is available
+    pc.current.ontrack = event => {
+      console.log('event.stream', event.streams);
+      //console.log('onaddstream', pc.current);
+      setRemoteStream(event.streams[0]);
+      console.log('event.streams[0]', event.streams[0], myKey);
+      if (remoteStream) {
+        console.log('ggggggggg', remoteStream.toURL());
+      }
+    };
+  };
   const join = async () => {
     connecting.current = true;
+    console.log('mykey in join', myKey);
     const cRef = firestore().collection('meet').doc(myKey);
     const offer = (await cRef.get()).data().offer;
-    await setupWebrtc({
-      pc,
-      configuration,
-      setLocalStream,
-      setRemoteStream,
-    });
+    const caller = (await cRef.get()).data().caller;
+    setPeerKey(caller);
+    await setupWebrtc();
+    console.log('caller id ', caller);
     if (offer) {
       setGettingCall(false);
-      collectIceCandidates({pc, cRef}, myKey);
+      collectIceCandidates(cRef, myKey, caller);
 
       if (pc.current) {
         console.log('setRemoteDescriptionsetRemoteDescription');

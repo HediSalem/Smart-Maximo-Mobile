@@ -1,35 +1,34 @@
 import React, {useState, useRef, useEffect} from 'react';
+import {Button} from '@react-native-material/core';
 import {
   Text,
   StyleSheet,
   View,
   TouchableOpacity,
-  Alert,
   ScrollView,
 } from 'react-native';
-import Video from './Video';
-import Colors from '../../../Styles/Colors';
-import {useSurfaceScale} from '@react-native-material/core/src/hooks/use-surface-scale';
-import {Button} from '@react-native-material/core';
+import Video from './src/Views/screens/VideoAssistance/Video';
 import {
-  //collectIceCandidates,
-  streamCleanUp,
-  getData,
-  firestoreCleanUp,
-  switchAudio,
-  switchCamera,
-  fetchDocumentNames,
-  getStream,
-} from '../../../utils/VideoCallFunctions';
-import firestore from '@react-native-firebase/firestore';
-import {
-  RTCSessionDescription,
+  MediaStream,
   RTCIceCandidate,
   RTCPeerConnection,
+  RTCSessionDescription,
 } from 'react-native-webrtc';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {faUser, faPhone} from '@fortawesome/free-solid-svg-icons/index';
+import {
+  getStream,
+  fetchDocumentNames,
+  firestoreCleanUp,
+  getData,
+} from './src/utils/VideoCallFunctions';
 
+import {faUser, faPhone} from '@fortawesome/free-solid-svg-icons/index';
+import {useSurfaceScale} from '@react-native-material/core/src/hooks/use-surface-scale';
+
+import Colors from './src/Styles/Colors';
+import {faVideo} from '@fortawesome/free-solid-svg-icons/index';
+import firestore from '@react-native-firebase/firestore';
+import DeviceInfo from 'react-native-device-info';
 const getRandomColor = () => {
   const colorNames = Object.keys(Colors);
   const randomColorName =
@@ -49,18 +48,19 @@ const configuration = {
     },
   ],
 };
-export default function InitiateCallScreen() {
+function StartCall() {
   const scale = useSurfaceScale();
   const [localStream, setLocalStream] = useState();
   const [remoteStream, setRemoteStream] = useState();
-  const [documentNames, setDocumentNames] = useState([]);
-
-  const [gettingCall, setGettingCall] = useState(false);
+  const [facingMode, setFacingMode] = useState('user');
   const [isMuted, setIsMuted] = useState(false);
-  const pc = useRef();
+  const [documentNames, setDocumentNames] = useState([]);
   const [peerKey, setPeerKey] = useState();
   const [myKey, setMyKey] = useState('');
   const [initiateCall, setInitiateCall] = useState(false);
+
+  const pc = useRef();
+  const [gettingCall, setGettingCall] = useState();
   const connecting = useRef(false);
   useEffect(() => {
     getData().then(value => {
@@ -69,35 +69,20 @@ export default function InitiateCallScreen() {
         fetchDocumentNames(value, setDocumentNames);
       }
     });
-
     const cRef = firestore().collection('meet').doc(peerKey);
+    const deviceId = DeviceInfo.getUniqueId();
     const subscribe = cRef.onSnapshot(snapshot => {
-      try {
-        const data = snapshot.data();
-        // If there is offer for chatId set the getting call flag
-        if (
-          pc.current &&
-          !pc.current.remoteDescription &&
-          data &&
-          data.answer
-        ) {
-          console.log('answer aaaaa', data.answer);
-          pc.current.setRemoteDescription(
-            new RTCSessionDescription(data.answer),
-          );
-        }
-        //if one of the users hangs up without entering the call, the calls is terminated
-        if (!data) {
-          hangup();
-        }
-      } catch (error) {
-        console.log('Error processing snapshot data:', error);
-        // Handle the error here, e.g., show an error message to the user
+      const data = snapshot.data();
+      console.log('data subscribe', data);
+      // on answer start call
+      if (pc.current && !pc.current.remoteDescription && data && data.answer) {
+        pc.current.setRemoteDescription(new RTCSessionDescription(data.answer));
+        console.log('answer created in firebase', data.answer);
       }
+
+      // If there is offer for chatId set the getting call flag
     });
-
     // On delete of collection call hangup
-
     // The other side has clicked on hangup
     const subscribeDelete = peerKey
       ? cRef.collection(peerKey)?.onSnapshot(snapshot => {
@@ -109,7 +94,6 @@ export default function InitiateCallScreen() {
           });
         })
       : null;
-
     return () => {
       subscribe();
       if (subscribeDelete) {
@@ -117,6 +101,50 @@ export default function InitiateCallScreen() {
       }
     };
   }, [initiateCall]);
+  const setupWebrtc = async () => {
+    //console.log(' origin current: ', pc.current);
+    pc.current = new RTCPeerConnection(configuration);
+    // Get the audio and video stream for the call
+    const stream = await getStream();
+    if (stream) {
+      setLocalStream(stream);
+      // pc.current.addStream(stream);
+      stream.getTracks().forEach(track => {
+        pc.current.addTrack(track, stream);
+      });
+    }
+
+    // Get the remote stream once it is available
+    pc.current.ontrack = event => {
+      console.log('event.stream', event.streams[0]);
+      //console.log('onaddstream', pc.current);
+      setRemoteStream(event.streams[0]);
+    };
+  };
+  const handleButtonClick = async name => {
+    setPeerKey(name);
+    create(name);
+  };
+  const hangup = async () => {
+    setGettingCall(false);
+    connecting.current = false;
+    streamCleanUp();
+    firestoreCleanUp(peerKey, myKey);
+    if (pc.current) {
+      pc.current.close();
+    }
+  };
+
+  // Helper function
+  const streamCleanUp = async () => {
+    if (localStream) {
+      localStream.getTracks().forEach(t => t.stop());
+      localStream.release();
+    }
+    setLocalStream(null);
+    setRemoteStream(null);
+  };
+
   const collectIceCandidates = async (cRef, localName, remoteName) => {
     console.log('collect');
     const candidteCollection = cRef.collection(localName);
@@ -144,138 +172,90 @@ export default function InitiateCallScreen() {
       });
     });
   };
-  const setupWebrtc = async () => {
-    //console.log(' origin current: ', pc.current);
-    pc.current = new RTCPeerConnection(configuration);
-    // Get the audio and video stream for the call
-    const stream = await getStream();
-    if (stream) {
-      setLocalStream(stream);
-      // pc.current.addStream(stream);
-      stream.getTracks().forEach(track => {
-        pc.current.addTrack(track, stream);
-      });
-    }
-
-    // Get the remote stream once it is available
-    pc.current.ontrack = event => {
-      console.log('event.stream', event.streams);
-      //console.log('onaddstream', pc.current);
-      setRemoteStream(event.streams[0]);
-      console.log('event.streams[0]', event.streams[0], myKey);
-      if (remoteStream) {
-        console.log('ggggggggg', remoteStream.toURL());
-      }
-    };
-  };
-
-  const handleButtonClick = async name => {
-    setPeerKey(name);
-    create(name);
-  };
 
   const create = async peerKey => {
+    console.log('calling');
     connecting.current = true;
-
+    setInitiateCall(true);
     // setup webrtc
 
     await setupWebrtc();
-    setInitiateCall(true);
+
     // Document for the call
     const cRef = firestore().collection('meet').doc(peerKey);
-    // Handle the case when peerKey is not available
 
     // Exchange the ICE candidates between the caller and callee
     collectIceCandidates(cRef, myKey, peerKey);
-    console.log('pc current gbal offer', pc.current);
-
     if (pc.current) {
       // Create the offer for the call
       // Store the offer under the document
       const offer = await pc.current.createOffer();
-      console.log('offer in create', offer);
-
+      // console.log('offer', offer);
       pc.current.setLocalDescription(offer);
-      console.log('setLocalDescription in create', pc.current);
-
+      const deviceId = DeviceInfo.getUniqueId();
       const cWithOffer = {
         offer: {
           type: offer.type,
           sdp: offer.sdp,
         },
-        caller: myKey,
+        caller: {
+          callerId: myKey,
+        },
       };
       cRef.set(cWithOffer);
 
       console.log('cRef setted ');
     }
   };
-
-  const hangup = async () => {
-    console.log('clicked');
-    setGettingCall(false);
-    connecting.current = false;
-    streamCleanUp({localStream, setLocalStream, setRemoteStream});
-    firestoreCleanUp(peerKey, myKey);
-    if (pc.current) {
-      pc.current.close();
-    }
-  };
-
-  //Displays local stream on calling
-  //Displays both local and remote stream once call is connected
   if (localStream) {
-    console.log('hhhhhhhh', remoteStream);
     return (
       <Video
-        isMuted={isMuted}
-        switchAudio={switchAudio}
-        switchCamera={switchCamera}
         hangup={hangup}
         localStream={localStream}
         remoteStream={remoteStream}
       />
     );
-  }
-  //Displays the Call button
-  return (
-    <ScrollView style={[styles.container, {backgroundColor: scale(0).hex()}]}>
-      <View>
-        <Text style={styles.tableHeader}>Connected users</Text>
-        <View style={styles.rowContainer}>
-          {documentNames.map(name => (
-            <View key={name} style={styles.card}>
-              <View style={styles.cardContent}>
-                <FontAwesomeIcon
-                  icon={faUser}
-                  style={[styles.cardIcon, {color: getRandomColor()}]}
-                  size={120}
-                />
-                <Text style={styles.cardText}>{name}</Text>
-              </View>
-              <View style={styles.buttonContainer}>
-                <View style={styles.stretchedButton}>
-                  <Button
-                    title="Call"
-                    color={Colors.green}
-                    onPress={() => handleButtonClick(name)}
-                    leading={
-                      <FontAwesomeIcon
-                        icon={faPhone}
-                        style={{color: Colors.mystic}}
-                      />
-                    }
+  } else {
+    return (
+      <ScrollView style={[styles.container, {backgroundColor: scale(0).hex()}]}>
+        <View>
+          <Text style={styles.tableHeader}>Connected users</Text>
+          <View style={styles.rowContainer}>
+            {documentNames.map(name => (
+              <View key={name} style={styles.card}>
+                <View style={styles.cardContent}>
+                  <FontAwesomeIcon
+                    icon={faUser}
+                    style={[styles.cardIcon, {color: getRandomColor()}]}
+                    size={120}
                   />
+                  <Text style={styles.cardText}>{name}</Text>
+                </View>
+                <View style={styles.buttonContainer}>
+                  <View style={styles.stretchedButton}>
+                    <Button
+                      title="Call"
+                      color={Colors.green}
+                      onPress={() => handleButtonClick(name)}
+                      leading={
+                        <FontAwesomeIcon
+                          icon={faPhone}
+                          style={{color: Colors.mystic}}
+                        />
+                      }
+                    />
+                  </View>
                 </View>
               </View>
-            </View>
-          ))}
+            ))}
+          </View>
         </View>
-      </View>
-    </ScrollView>
-  );
+      </ScrollView>
+    );
+  }
 }
 
+export default StartCall;
 const styles = StyleSheet.create({
   container: {
     flex: 1,

@@ -67,7 +67,12 @@ export const setupWebrtc = async ({
 
       // Get the remote stream once it is available
       pc.current.ontrack = event => {
-        setRemoteStream(event.streams[0]);
+        try {
+          setRemoteStream(event.streams[0]);
+          console.log('remote stream', event.streams[0]);
+        } catch (error) {
+          console.log('Error onTrack', error);
+        }
       };
     }
   } catch (error) {
@@ -78,7 +83,6 @@ export const getData = async () => {
   try {
     const value = await AsyncStorage.getItem('myKey');
     if (value !== null) {
-      console.log('myKey from storage:', value);
     }
     return value;
   } catch (e) {
@@ -96,14 +100,14 @@ export const collectIceCandidates = async ({pc, cRef}, remoteName) => {
       }
     };
   }
-
+  console.log('remotename', remoteName);
   cRef.collection(remoteName).onSnapshot(async snapshot => {
     snapshot.docChanges().forEach(async change => {
       if (change.type === 'added') {
         const candidateData = change.doc.data();
 
         const candidate = new RTCIceCandidate(candidateData);
-
+        console.log('candidateaaaa', candidate);
         await pc.current.addIceCandidate(candidate);
       }
     });
@@ -152,15 +156,15 @@ export const firestoreCleanUp = async (key1, key2) => {
       await candidate.ref.delete();
     });
   }
+  cRef2.delete();
 };
-export const fetchDocumentNames = async ({excludedName, setDocumentNames}) => {
+export const fetchDocumentNames = async (excludedName, setDocumentNames) => {
   try {
-    const querySnapshot = await firestore().collection('meet').get();
+    const querySnapshot = await firestore().collection('users').get();
 
-    const names = querySnapshot.docs
-      .filter(doc => doc.id !== excludedName)
-      .map(doc => doc.id);
-    setDocumentNames(names);
+    const names = querySnapshot.docs.map(doc => doc.id);
+    const filteredNames = names.filter(name => name !== excludedName);
+    setDocumentNames(filteredNames);
   } catch (error) {
     console.log('Error getting documents: ', error);
   }
