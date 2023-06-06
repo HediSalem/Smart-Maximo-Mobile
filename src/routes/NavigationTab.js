@@ -12,7 +12,7 @@ import {useNavigation} from '@react-navigation/native';
 import InitiateCallScreen from '../Views/screens/VideoAssistance/InitiateCallScreen';
 import {getData} from '../utils/VideoCallFunctions';
 
-function NavigationTab() {
+function NavigationTab({currentScreen, isHangedUp}) {
   const Stack = createStackNavigator();
   const Tab = createBottomTabNavigator();
   const navigation = useNavigation();
@@ -27,6 +27,8 @@ function NavigationTab() {
         navigation.navigate('AuthStack');
       }
     });
+    if (isHangedUp) {
+    }
   }, []);
 
   const AttachmentStack = () => (

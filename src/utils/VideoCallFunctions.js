@@ -80,16 +80,14 @@ export const setupWebrtc = async ({
   }
 };
 export const getData = async () => {
-  try {
-    const value = await AsyncStorage.getItem('myKey');
-    if (value !== null) {
-    }
+  const value = await AsyncStorage.getItem('myKey');
+  if (value !== null) {
     return value;
-  } catch (e) {
-    console.log('Failed to fetch the data from storage:', e);
+  } else {
     return null;
   }
 };
+
 export const collectIceCandidates = async ({pc, cRef}, remoteName) => {
   const candidteCollection = cRef.collection(remoteName);
 

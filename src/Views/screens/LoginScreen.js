@@ -7,6 +7,7 @@ import {
   Alert,
   ActivityIndicator,
 } from 'react-native';
+import {requestNotificationPermission} from '../components/FCM';
 import firestore from '@react-native-firebase/firestore';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Button} from '@react-native-material/core';
@@ -24,7 +25,7 @@ const LoginScreen = () => {
 
   const handlePress = async () => {
     setLoading(true);
-    const response = await login(username, password);
+    //const response = await login(username, password);
     if (
       true
       //response.success
@@ -62,14 +63,14 @@ const LoginScreen = () => {
       </View>
     );
   }
-  const inputInFirebase = () => {
+  const inputInFirebase = async () => {
     if (username.trim().length) {
       console.log('d5alna bel key');
       const signalingRef = firestore().collection('users').doc(username);
+      const token = await requestNotificationPermission();
 
-      console.log('d5alna el signaling');
-      signalingRef.set({}, {merge: true});
-
+      signalingRef.set({});
+      signalingRef.update({token: token});
       console.log('Signaling information saved to the database!');
     }
   };

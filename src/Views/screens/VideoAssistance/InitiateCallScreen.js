@@ -7,6 +7,7 @@ import {
   Alert,
   ScrollView,
 } from 'react-native';
+import {sendNotificationToJoin} from '../../components/FCM';
 import Video from './Video';
 import Colors from '../../../Styles/Colors';
 import {useSurfaceScale} from '@react-native-material/core/src/hooks/use-surface-scale';
@@ -29,6 +30,7 @@ import {
 } from 'react-native-webrtc';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faUser, faPhone} from '@fortawesome/free-solid-svg-icons/index';
+import {err} from 'react-native-svg/lib/typescript/xml';
 
 const getRandomColor = () => {
   const colorNames = Object.keys(Colors);
@@ -54,23 +56,26 @@ export default function InitiateCallScreen() {
   const [localStream, setLocalStream] = useState();
   const [remoteStream, setRemoteStream] = useState();
   const [documentNames, setDocumentNames] = useState([]);
-
+  const [start, setStart] = useState(false);
   const [gettingCall, setGettingCall] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const pc = useRef();
-  const [peerKey, setPeerKey] = useState();
-  const [myKey, setMyKey] = useState('');
-  const [initiateCall, setInitiateCall] = useState(false);
+  const peerKeyRef = useRef();
+  const myKeyRef = useRef();
   const connecting = useRef(false);
   useEffect(() => {
-    getData().then(value => {
-      if (value !== null) {
-        setMyKey(value);
-        fetchDocumentNames(value, setDocumentNames);
-      }
-    });
+    const fetchData = async () => {
+      await getData().then(value => {
+        if (value !== null) {
+          myKeyRef.current = value;
+          fetchDocumentNames(value, setDocumentNames);
+        }
+      });
+    };
+    fetchData();
+    const cRef = firestore().collection('meet').doc(peerKeyRef.current);
 
-    const cRef = firestore().collection('meet').doc(peerKey);
+    console.log('peeeeeer', peerKeyRef.current);
     const subscribe = cRef.onSnapshot(snapshot => {
       try {
         const data = snapshot.data();
@@ -99,8 +104,8 @@ export default function InitiateCallScreen() {
     // On delete of collection call hangup
 
     // The other side has clicked on hangup
-    const subscribeDelete = peerKey
-      ? cRef.collection(peerKey)?.onSnapshot(snapshot => {
+    const subscribeDelete = peerKeyRef.current
+      ? cRef.collection(peerKeyRef.current)?.onSnapshot(snapshot => {
           snapshot.docChanges().forEach(change => {
             if (change.type === 'removed') {
               console.log('hangup normalement', change.type);
@@ -116,7 +121,8 @@ export default function InitiateCallScreen() {
         subscribeDelete();
       }
     };
-  }, [initiateCall]);
+  }, [start]);
+
   const collectIceCandidates = async (cRef, localName, remoteName) => {
     console.log('collect');
     const candidteCollection = cRef.collection(localName);
@@ -162,16 +168,32 @@ export default function InitiateCallScreen() {
       console.log('event.stream', event.streams);
       //console.log('onaddstream', pc.current);
       setRemoteStream(event.streams[0]);
-      console.log('event.streams[0]', event.streams[0], myKey);
+      console.log('event.streams[0]', event.streams[0], myKeyRef.current);
       if (remoteStream) {
         console.log('ggggggggg', remoteStream.toURL());
       }
     };
   };
+  const switchCamera = () => {
+    localStream.getVideoTracks().forEach(track => track._switchCamera());
+  };
 
+  const switchAudio = () => {
+    localStream.getAudioTracks().forEach(track => {
+      track.enabled = !isMuted;
+    });
+    setIsMuted(!isMuted);
+  };
   const handleButtonClick = async name => {
-    setPeerKey(name);
-    create(name);
+    try {
+      peerKeyRef.current = name; // Set the state synchronously
+
+      await create(name); // Perform the asynchronous operation
+    } catch (error) {
+      // Handle any errors that occur during the state setting or the asynchronous operation
+      console.error('Error: in handle', error);
+      // Optionally, you can show an error message or take appropriate action
+    }
   };
 
   const create = async peerKey => {
@@ -180,13 +202,12 @@ export default function InitiateCallScreen() {
     // setup webrtc
 
     await setupWebrtc();
-    setInitiateCall(true);
     // Document for the call
     const cRef = firestore().collection('meet').doc(peerKey);
     // Handle the case when peerKey is not available
 
     // Exchange the ICE candidates between the caller and callee
-    collectIceCandidates(cRef, myKey, peerKey);
+    collectIceCandidates(cRef, myKeyRef.current, peerKey);
     console.log('pc current gbal offer', pc.current);
 
     if (pc.current) {
@@ -203,12 +224,24 @@ export default function InitiateCallScreen() {
           type: offer.type,
           sdp: offer.sdp,
         },
-        caller: myKey,
+        caller: myKeyRef.current,
       };
       cRef.set(cWithOffer);
 
       console.log('cRef setted ');
     }
+    try {
+      const tRef = firestore().collection('users').doc(peerKeyRef.current);
+      const snapshot = await tRef.get();
+      const data = snapshot.data();
+      const token = data.token;
+      console.log('ttttttt', token);
+      sendNotificationToJoin(token, myKeyRef.current);
+    } catch (error) {
+      console.error('errrrrrrrrrrrrr', error);
+    }
+
+    setStart(true);
   };
 
   const hangup = async () => {
@@ -216,7 +249,7 @@ export default function InitiateCallScreen() {
     setGettingCall(false);
     connecting.current = false;
     streamCleanUp({localStream, setLocalStream, setRemoteStream});
-    firestoreCleanUp(peerKey, myKey);
+    firestoreCleanUp(peerKeyRef.current, myKeyRef.current);
     if (pc.current) {
       pc.current.close();
     }

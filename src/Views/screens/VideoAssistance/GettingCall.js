@@ -5,7 +5,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faPhone} from '@fortawesome/free-solid-svg-icons/index';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-function GettingCall({hangup, join}) {
+function GettingCall({hangup, join, peerKey}) {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
@@ -13,6 +13,7 @@ function GettingCall({hangup, join}) {
           source={require('../../../assets/incoming_call.png')}
           style={styles.icon}
         />
+        <Text style={styles.caller}>{peerKey} is calling you! </Text>
       </View>
       <View style={styles.buttonContainer}>
         <View style={styles.CallButton}>
@@ -40,6 +41,9 @@ function GettingCall({hangup, join}) {
 }
 
 const styles = StyleSheet.create({
+  caller: {
+    fontSize: 25,
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
