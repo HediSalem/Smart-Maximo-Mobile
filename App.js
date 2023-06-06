@@ -107,7 +107,6 @@ const App = () => {
       collectIceCandidates({pc, cRef}, myKey);
 
       if (pc.current) {
-        console.log('setRemoteDescriptionsetRemoteDescription');
         pc.current.setRemoteDescription(new RTCSessionDescription(offer));
 
         const answer = await pc.current.createAnswer();
