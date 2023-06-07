@@ -2,7 +2,13 @@ import React from 'react';
 import ListItem from './ListItem';
 import {FlatList, View} from 'react-native';
 
-function MyFlatlist({data, searchPhrase, setCLicked}) {
+function MyFlatlist({
+  data,
+  searchPhrase,
+  onEndReached,
+  keyExtractor,
+  onEndReachedThreshold,
+}) {
   const renderItem = ({item}) => {
     if (searchPhrase === '') {
       return (
@@ -20,9 +26,9 @@ function MyFlatlist({data, searchPhrase, setCLicked}) {
       );
     }
     if (
-      item.DESCRIPTION.toUpperCase().includes(
-        searchPhrase.toUpperCase().trim().replace(/\s/g, ''),
-      )
+      item.description
+        .toUpperCase()
+        .includes(searchPhrase.toUpperCase().trim().replace(/\s/g, ''))
     ) {
       return (
         <ListItem
@@ -40,9 +46,11 @@ function MyFlatlist({data, searchPhrase, setCLicked}) {
   return (
     <FlatList
       data={data}
-      keyExtractor={workorder => workorder.WORKORDERID.toString()}
+      keyExtractor={keyExtractor}
       renderItem={renderItem}
-      initialNumToRender={5}
+      onEndReached={onEndReached}
+      onEndReachedThreshold={onEndReachedThreshold}
+      contentContainerStyle={{paddingBottom: 160}}
     />
   );
 }

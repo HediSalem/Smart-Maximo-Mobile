@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "663199329793",
+    "project_id": "smartmaximomobi",
+    "storage_bucket": "smartmaximomobi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:663199329793:android:92fe7ec83ef26c1f8a5a00",
+        "android_client_info": {
+          "package_name": "com.smartechmaximomobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "663199329793-5id0tujmp1dbcbhoru1bj0rr78drn6q4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-FeZdT-iHTWvDIhAmmsz0qZkgwg8RXXE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "663199329793-5id0tujmp1dbcbhoru1bj0rr78drn6q4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
