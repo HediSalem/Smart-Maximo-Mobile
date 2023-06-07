@@ -258,7 +258,6 @@ export default function InitiateCallScreen() {
   //Displays local stream on calling
   //Displays both local and remote stream once call is connected
   if (localStream) {
-    console.log('hhhhhhhh', remoteStream);
     return (
       <Video
         isMuted={isMuted}
